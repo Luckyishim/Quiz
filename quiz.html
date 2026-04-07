@@ -1,227 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OODJ Java MCQ — 100 Questions</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#060610;--s1:#0e0e1f;--s2:#14142b;--s3:#1c1c38;--border:#252545;--a1:#6c63ff;--a2:#ff6b9d;--a3:#63ffda;--a4:#ffd166;--text:#eeeef8;--muted:#6666aa;--correct:#4ade80;--wrong:#f87171;--r:14px}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(108,99,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(108,99,255,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0}
-.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
-.o1{width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,.11),transparent 70%);top:-200px;left:-150px}
-.o2{width:450px;height:450px;background:radial-gradient(circle,rgba(255,107,157,.08),transparent 70%);bottom:-150px;right:-100px}
-.screen{position:relative;z-index:1}
-.screen.hidden{display:none!important}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OODJ Java MCQ — 100 Questions</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060610;
+      --s1: #0e0e1f;
+      --s2: #14142b;
+      --s3: #1c1c38;
+      --border: #252545;
+      --a1: #6c63ff;
+      --a2: #ff6b9d;
+      --a3: #63ffda;
+      --a4: #ffd166;
+      --text: #eeeef8;
+      --muted: #6666aa;
+      --correct: #4ade80;
+      --wrong: #f87171;
+      --r: 14px
+    }
 
-/* LANDING */
-#landing{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;text-align:center}
-.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(108,99,255,.14);border:1px solid rgba(108,99,255,.28);border-radius:999px;padding:.35rem 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--a1);letter-spacing:.14em;margin-bottom:1.8rem;animation:fU .5s ease both}
-.hero{font-size:clamp(2rem,6vw,4.2rem);font-weight:700;line-height:1.08;margin-bottom:1rem;animation:fU .5s .08s ease both}
-.hero .hi{background:linear-gradient(120deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero .lo{color:var(--a3)}
-.sub{font-size:.97rem;color:var(--muted);max-width:500px;line-height:1.8;margin-bottom:2.2rem;animation:fU .5s .16s ease both}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-.mode-cards{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.2rem;animation:fU .5s .22s ease both;width:100%;max-width:620px}
-.mc{background:var(--s1);border:1.5px solid var(--border);border-radius:16px;padding:1.1rem 1.3rem;cursor:pointer;text-align:left;flex:1;min-width:140px;max-width:190px;transition:all .2s;position:relative;overflow:hidden}
-.mc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--a1),var(--a2));opacity:0;transition:opacity .2s;border-radius:16px}
-.mc:hover::after,.mc.active::after{opacity:.07}
-.mc.active{border-color:var(--a1);box-shadow:0 0 22px rgba(108,99,255,.22)}
-.mc-i{font-size:1.5rem;margin-bottom:.45rem}
-.mc-t{font-weight:600;font-size:.9rem;margin-bottom:.2rem}
-.mc-d{font-size:.72rem;color:var(--muted);line-height:1.4}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden
+    }
 
-.landing-box{display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:420px;animation:fU .5s .3s ease both}
-select.sel{background:var(--s2);border:1.5px solid var(--border);color:var(--text);font-family:'Outfit',sans-serif;font-size:.92rem;padding:.75rem 1rem;border-radius:var(--r);width:100%;outline:none;appearance:none;cursor:pointer;transition:border-color .2s}
-select.sel:focus{border-color:var(--a1)}
-.btn-p{background:linear-gradient(135deg,var(--a1),#a09bff);color:#fff;border:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:.97rem;padding:.88rem 2rem;border-radius:var(--r);cursor:pointer;width:100%;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 22px rgba(108,99,255,.28)}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,99,255,.45)}
-.btn-p:active{transform:translateY(0)}
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(108, 99, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(108, 99, 255, .035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+      z-index: 0
+    }
 
-.pills{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:1.8rem;animation:fU .5s .38s ease both;max-width:560px}
-.pill{background:var(--s2);border:1px solid var(--border);border-radius:999px;padding:.22rem .7rem;font-size:.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0
+    }
 
-/* QUIZ */
-#quiz{min-height:100vh;padding:1.4rem 1.2rem;max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:0}
-.q-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.3rem;flex-wrap:wrap;gap:.6rem}
-.q-inf .q-lbl{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em}
-.q-inf .q-n{font-size:1.3rem;font-weight:700;color:var(--a1);line-height:1}
-.sc-chip{background:var(--s2);border:1px solid var(--border);border-radius:999px;padding:.28rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--a4)}
-.prog{height:3px;background:var(--s3);border-radius:999px;margin-bottom:1.6rem;overflow:hidden}
-.prog-f{height:100%;background:linear-gradient(90deg,var(--a1),var(--a3));border-radius:999px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+    .o1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(108, 99, 255, .11), transparent 70%);
+      top: -200px;
+      left: -150px
+    }
 
-.qcard{background:var(--s1);border:1.5px solid var(--border);border-radius:20px;padding:1.7rem 1.5rem;margin-bottom:1.1rem;animation:slideC .28s ease both}
-.tag-row{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-bottom:.85rem}
-.tc{display:inline-block;background:rgba(108,99,255,.13);border:1px solid rgba(108,99,255,.24);border-radius:999px;padding:.2rem .75rem;font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--a1);letter-spacing:.07em}
-.sc2{display:inline-block;background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.18);border-radius:999px;padding:.2rem .75rem;font-size:.63rem;font-family:'JetBrains Mono',monospace;color:var(--a4)}
-.qt{font-size:1.02rem;font-weight:500;line-height:1.72;margin-bottom:1.1rem}
-.code{background:#080816;border:1px solid var(--border);border-left:3px solid var(--a1);border-radius:10px;padding:1rem 1.2rem;font-family:'JetBrains Mono',monospace;font-size:.73rem;line-height:1.82;color:#c4ccdd;overflow-x:auto;white-space:pre;margin-bottom:1.1rem}
-.opts{display:flex;flex-direction:column;gap:.6rem}
-.opt{background:var(--s2);border:1.5px solid var(--border);border-radius:12px;padding:.85rem 1rem;display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;font-size:.9rem;line-height:1.55;transition:all .17s;text-align:left;color:var(--text);font-family:'Outfit',sans-serif}
-.opt:hover:not(:disabled){border-color:var(--a1);background:rgba(108,99,255,.07);transform:translateX(5px)}
-.opt:disabled{cursor:default;transform:none}
-.ol{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;color:var(--a1);min-width:1rem;margin-top:.18rem;flex-shrink:0}
-.opt.correct{border-color:var(--correct);background:rgba(74,222,128,.08)}
-.opt.correct .ol{color:var(--correct)}
-.opt.wrong{border-color:var(--wrong);background:rgba(248,113,113,.08)}
-.opt.wrong .ol{color:var(--wrong)}
-.exp{background:var(--s2);border:1px solid var(--border);border-left:3px solid var(--a4);border-radius:12px;padding:.95rem 1.1rem;font-size:.85rem;line-height:1.7;margin-top:.9rem;animation:fU .22s ease}
-.exp .et{font-weight:700;color:var(--a4);margin-bottom:.28rem;font-size:.88rem}
-.q-footer{display:flex;gap:.75rem;padding-top:.8rem;margin-top:auto}
-.btn-next{background:linear-gradient(135deg,var(--a1),#a09bff);color:#fff;border:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:.93rem;padding:.8rem 2rem;border-radius:var(--r);cursor:pointer;flex:1;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 18px rgba(108,99,255,.28)}
-.btn-next:hover{transform:translateY(-2px)}
-.btn-next:disabled{opacity:.33;cursor:default;transform:none;box-shadow:none}
-.btn-quit{background:transparent;color:var(--muted);border:1.5px solid var(--border);font-family:'Outfit',sans-serif;font-size:.85rem;padding:.8rem 1.2rem;border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap}
-.btn-quit:hover{color:var(--text);border-color:var(--muted)}
+    .o2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(255, 107, 157, .08), transparent 70%);
+      bottom: -150px;
+      right: -100px
+    }
 
-/* RESULTS */
-#results{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;text-align:center;gap:0}
-.res-ring{width:168px;height:168px;border-radius:50%;background:conic-gradient(var(--a1) calc(var(--pct,0)*1%),var(--s3) 0);display:flex;align-items:center;justify-content:center;margin:1.5rem auto;animation:popIn .5s cubic-bezier(.175,.885,.32,1.275) both;box-shadow:0 0 40px rgba(108,99,255,.25)}
-.res-inner{width:150px;height:150px;background:var(--s1);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.res-big{font-size:2.4rem;font-weight:700;color:var(--a1)}
-.res-sm{font-size:.65rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.1em}
-.res-grade{font-size:1.45rem;font-weight:700;margin-bottom:.35rem;animation:fU .4s .45s ease both}
-.res-msg{color:var(--muted);font-size:.9rem;max-width:380px;line-height:1.75;margin-bottom:1.8rem;animation:fU .4s .52s ease both}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;width:100%;max-width:420px;margin-bottom:1.5rem;animation:fU .4s .6s ease both}
-.stat{background:var(--s1);border:1.5px solid var(--border);border-radius:var(--r);padding:.9rem .5rem}
-.sv{font-size:1.7rem;font-weight:700}
-.sv.g{color:var(--correct)}.sv.r{color:var(--wrong)}.sv.y{color:var(--a4)}
-.sl{font-size:.67rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:.15rem}
-.breakdown{width:100%;max-width:420px;margin-bottom:1.5rem;animation:fU .4s .65s ease both}
-.bk-h{font-size:.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.1em;margin-bottom:.75rem;text-align:left}
-.bk-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.42rem}
-.bk-l{font-size:.75rem;min-width:100px;text-align:left;color:var(--text)}
-.bk-b{flex:1;height:5px;background:var(--s3);border-radius:999px;overflow:hidden}
-.bk-f{height:100%;background:linear-gradient(90deg,var(--a1),var(--a3));border-radius:999px;transition:width .6s .8s ease}
-.bk-p{font-size:.68rem;font-family:'JetBrains Mono',monospace;color:var(--muted);min-width:2.5rem;text-align:right}
-.res-btns{display:flex;flex-direction:column;gap:.65rem;width:100%;max-width:340px;animation:fU .4s .72s ease both}
+    .screen {
+      position: relative;
+      z-index: 1
+    }
 
-@keyframes fU{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideC{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
-@keyframes popIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+    .screen.hidden {
+      display: none !important
+    }
 
-@media(max-width:560px){
-  .mode-cards{gap:.6rem}.mc{min-width:120px;padding:.9rem 1rem}
-  .stats{gap:.5rem}.sv{font-size:1.3rem}
-  .q-footer{flex-direction:column}
-  .bk-l{min-width:75px;font-size:.68rem}
-  .qcard{padding:1.2rem 1rem}
-}
-</style>
+    /* LANDING */
+    #landing {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(108, 99, 255, .14);
+      border: 1px solid rgba(108, 99, 255, .28);
+      border-radius: 999px;
+      padding: .35rem 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      color: var(--a1);
+      letter-spacing: .14em;
+      margin-bottom: 1.8rem;
+      animation: fU .5s ease both
+    }
+
+    .hero {
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 1rem;
+      animation: fU .5s .08s ease both
+    }
+
+    .hero .hi {
+      background: linear-gradient(120deg, var(--a1), var(--a2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .hero .lo {
+      color: var(--a3)
+    }
+
+    .sub {
+      font-size: .97rem;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+      animation: fU .5s .16s ease both
+    }
+
+    .mode-cards {
+      display: flex;
+      gap: .9rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2.2rem;
+      animation: fU .5s .22s ease both;
+      width: 100%;
+      max-width: 620px
+    }
+
+    .mc {
+      background: var(--s1);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 1.1rem 1.3rem;
+      cursor: pointer;
+      text-align: left;
+      flex: 1;
+      min-width: 140px;
+      max-width: 190px;
+      transition: all .2s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .mc::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      opacity: 0;
+      transition: opacity .2s;
+      border-radius: 16px
+    }
+
+    .mc:hover::after,
+    .mc.active::after {
+      opacity: .07
+    }
+
+    .mc.active {
+      border-color: var(--a1);
+      box-shadow: 0 0 22px rgba(108, 99, 255, .22)
+    }
+
+    .mc-i {
+      font-size: 1.5rem;
+      margin-bottom: .45rem
+    }
+
+    .mc-t {
+      font-weight: 600;
+      font-size: .9rem;
+      margin-bottom: .2rem
+    }
+
+    .mc-d {
+      font-size: .72rem;
+      color: var(--muted);
+      line-height: 1.4
+    }
+
+    .landing-box {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      width: 100%;
+      max-width: 420px;
+      animation: fU .5s .3s ease both
+    }
+
+    select.sel {
+      background: var(--s2);
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: .92rem;
+      padding: .75rem 1rem;
+      border-radius: var(--r);
+      width: 100%;
+      outline: none;
+      appearance: none;
+      cursor: pointer;
+      transition: border-color .2s
+    }
+
+    select.sel:focus {
+      border-color: var(--a1)
+    }
+
+    .btn-p {
+      background: linear-gradient(135deg, var(--a1), #a09bff);
+      color: #fff;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .97rem;
+      padding: .88rem 2rem;
+      border-radius: var(--r);
+      cursor: pointer;
+      width: 100%;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 22px rgba(108, 99, 255, .28)
+    }
+
+    .btn-p:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, .45)
+    }
+
+    .btn-p:active {
+      transform: translateY(0)
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      justify-content: center;
+      margin-top: 1.8rem;
+      animation: fU .5s .38s ease both;
+      max-width: 560px
+    }
+
+    .pill {
+      background: var(--s2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .22rem .7rem;
+      font-size: .68rem;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    /* QUIZ */
+    #quiz {
+      min-height: 100vh;
+      padding: 1.4rem 1.2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .q-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.3rem;
+      flex-wrap: wrap;
+      gap: .6rem
+    }
+
+    .q-inf .q-lbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
+      color: var(--muted);
+      letter-spacing: .1em
+    }
+
+    .q-inf .q-n {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--a1);
+      line-height: 1
+    }
+
+    .sc-chip {
+      background: var(--s2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .28rem .9rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .75rem;
+      color: var(--a4)
+    }
+
+    .prog {
+      height: 3px;
+      background: var(--s3);
+      border-radius: 999px;
+      margin-bottom: 1.6rem;
+      overflow: hidden
+    }
+
+    .prog-f {
+      height: 100%;
+      background: linear-gradient(90deg, var(--a1), var(--a3));
+      border-radius: 999px;
+      transition: width .4s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .qcard {
+      background: var(--s1);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 1.7rem 1.5rem;
+      margin-bottom: 1.1rem;
+      animation: slideC .28s ease both
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      align-items: center;
+      margin-bottom: .85rem
+    }
+
+    .tc {
+      display: inline-block;
+      background: rgba(108, 99, 255, .13);
+      border: 1px solid rgba(108, 99, 255, .24);
+      border-radius: 999px;
+      padding: .2rem .75rem;
+      font-size: .65rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--a1);
+      letter-spacing: .07em
+    }
+
+    .sc2 {
+      display: inline-block;
+      background: rgba(255, 209, 102, .07);
+      border: 1px solid rgba(255, 209, 102, .18);
+      border-radius: 999px;
+      padding: .2rem .75rem;
+      font-size: .63rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--a4)
+    }
+
+    .qt {
+      font-size: 1.02rem;
+      font-weight: 500;
+      line-height: 1.72;
+      margin-bottom: 1.1rem
+    }
+
+    .code {
+      background: #080816;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--a1);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .73rem;
+      line-height: 1.82;
+      color: #c4ccdd;
+      overflow-x: auto;
+      white-space: pre;
+      margin-bottom: 1.1rem
+    }
+
+    .opts {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem
+    }
+
+    .opt {
+      background: var(--s2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      cursor: pointer;
+      font-size: .9rem;
+      line-height: 1.55;
+      transition: all .17s;
+      text-align: left;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif
+    }
+
+    .opt:hover:not(:disabled) {
+      border-color: var(--a1);
+      background: rgba(108, 99, 255, .07);
+      transform: translateX(5px)
+    }
+
+    .opt:disabled {
+      cursor: default;
+      transform: none
+    }
+
+    .ol {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--a1);
+      min-width: 1rem;
+      margin-top: .18rem;
+      flex-shrink: 0
+    }
+
+    .opt.correct {
+      border-color: var(--correct);
+      background: rgba(74, 222, 128, .08)
+    }
+
+    .opt.correct .ol {
+      color: var(--correct)
+    }
+
+    .opt.wrong {
+      border-color: var(--wrong);
+      background: rgba(248, 113, 113, .08)
+    }
+
+    .opt.wrong .ol {
+      color: var(--wrong)
+    }
+
+    .exp {
+      background: var(--s2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--a4);
+      border-radius: 12px;
+      padding: .95rem 1.1rem;
+      font-size: .85rem;
+      line-height: 1.7;
+      margin-top: .9rem;
+      animation: fU .22s ease
+    }
+
+    .exp .et {
+      font-weight: 700;
+      color: var(--a4);
+      margin-bottom: .28rem;
+      font-size: .88rem
+    }
+
+    .q-footer {
+      display: flex;
+      gap: .75rem;
+      padding-top: .8rem;
+      margin-top: auto
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, var(--a1), #a09bff);
+      color: #fff;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .93rem;
+      padding: .8rem 2rem;
+      border-radius: var(--r);
+      cursor: pointer;
+      flex: 1;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 18px rgba(108, 99, 255, .28)
+    }
+
+    .btn-next:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn-next:disabled {
+      opacity: .33;
+      cursor: default;
+      transform: none;
+      box-shadow: none
+    }
+
+    .btn-quit {
+      background: transparent;
+      color: var(--muted);
+      border: 1.5px solid var(--border);
+      font-family: 'Outfit', sans-serif;
+      font-size: .85rem;
+      padding: .8rem 1.2rem;
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: all .2s;
+      white-space: nowrap
+    }
+
+    .btn-quit:hover {
+      color: var(--text);
+      border-color: var(--muted)
+    }
+
+    /* RESULTS */
+    #results {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      gap: 0
+    }
+
+    .res-ring {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      background: conic-gradient(var(--a1) calc(var(--pct, 0)*1%), var(--s3) 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem auto;
+      animation: popIn .5s cubic-bezier(.175, .885, .32, 1.275) both;
+      box-shadow: 0 0 40px rgba(108, 99, 255, .25)
+    }
+
+    .res-inner {
+      width: 150px;
+      height: 150px;
+      background: var(--s1);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center
+    }
+
+    .res-big {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--a1)
+    }
+
+    .res-sm {
+      font-size: .65rem;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .1em
+    }
+
+    .res-grade {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: .35rem;
+      animation: fU .4s .45s ease both
+    }
+
+    .res-msg {
+      color: var(--muted);
+      font-size: .9rem;
+      max-width: 380px;
+      line-height: 1.75;
+      margin-bottom: 1.8rem;
+      animation: fU .4s .52s ease both
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 1.5rem;
+      animation: fU .4s .6s ease both
+    }
+
+    .stat {
+      background: var(--s1);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r);
+      padding: .9rem .5rem
+    }
+
+    .sv {
+      font-size: 1.7rem;
+      font-weight: 700
+    }
+
+    .sv.g {
+      color: var(--correct)
+    }
+
+    .sv.r {
+      color: var(--wrong)
+    }
+
+    .sv.y {
+      color: var(--a4)
+    }
+
+    .sl {
+      font-size: .67rem;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: .15rem
+    }
+
+    .breakdown {
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 1.5rem;
+      animation: fU .4s .65s ease both
+    }
+
+    .bk-h {
+      font-size: .7rem;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .1em;
+      margin-bottom: .75rem;
+      text-align: left
+    }
+
+    .bk-row {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: .42rem
+    }
+
+    .bk-l {
+      font-size: .75rem;
+      min-width: 100px;
+      text-align: left;
+      color: var(--text)
+    }
+
+    .bk-b {
+      flex: 1;
+      height: 5px;
+      background: var(--s3);
+      border-radius: 999px;
+      overflow: hidden
+    }
+
+    .bk-f {
+      height: 100%;
+      background: linear-gradient(90deg, var(--a1), var(--a3));
+      border-radius: 999px;
+      transition: width .6s .8s ease
+    }
+
+    .bk-p {
+      font-size: .68rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--muted);
+      min-width: 2.5rem;
+      text-align: right
+    }
+
+    .res-btns {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      width: 100%;
+      max-width: 340px;
+      animation: fU .4s .72s ease both
+    }
+
+    @keyframes fU {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes slideC {
+      from {
+        opacity: 0;
+        transform: translateX(-12px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(.5)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    @media(max-width:560px) {
+      .mode-cards {
+        gap: .6rem
+      }
+
+      .mc {
+        min-width: 120px;
+        padding: .9rem 1rem
+      }
+
+      .stats {
+        gap: .5rem
+      }
+
+      .sv {
+        font-size: 1.3rem
+      }
+
+      .q-footer {
+        flex-direction: column
+      }
+
+      .bk-l {
+        min-width: 75px;
+        font-size: .68rem
+      }
+
+      .qcard {
+        padding: 1.2rem 1rem
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="orb o1"></div>
-<div class="orb o2"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
 
-<!-- LANDING -->
-<div id="landing" class="screen">
-  <span class="badge">CT038-3-2 � OODJ � APU</span>
-  <h1 class="hero">Java OOP<br><span class="hi">MCQ</span> <span class="lo">Practice</span></h1>
-  <p class="sub">100 questions extracted from 3 real APU exam papers. Train smart, pass with confidence.</p>
+  <!-- LANDING -->
+  <div id="landing" class="screen">
+    <span class="badge">CT038-3-2 � OODJ � APU</span>
+    <h1 class="hero">Java OOP<br><span class="hi">MCQ</span> <span class="lo">Practice</span></h1>
+    <p class="sub">100 questions extracted from 3 real APU exam papers. Train smart, pass with confidence.</p>
 
-  <div class="mode-cards">
-    <div class="mc active" onclick="selMode('bank',this)">
-      <div class="mc-i">Exam</div>
-      <div class="mc-t">Exam Bank</div>
-      <div class="mc-d">100 stored questions from real papers</div>
+    <div class="mode-cards">
+      <div class="mc active" onclick="selMode('bank',this)">
+        <div class="mc-i">Exam</div>
+        <div class="mc-t">Exam Bank</div>
+        <div class="mc-d">100 stored questions from real papers</div>
+      </div>
+      <div class="mc" onclick="selMode('random',this)">
+        <div class="mc-i">Mix</div>
+        <div class="mc-t">Random Mix</div>
+        <div class="mc-d">Shuffled selection, different every time</div>
+      </div>
     </div>
-    <div class="mc" onclick="selMode('random',this)">
-      <div class="mc-i">Mix</div>
-      <div class="mc-t">Random Mix</div>
-      <div class="mc-d">Shuffled selection, different every time</div>
+
+    <div class="landing-box">
+      <div id="bankOpts" style="display:flex;flex-direction:column;gap:.65rem">
+        <select id="qCount" class="sel">
+          <option value="10">10 Questions - Quick Drill</option>
+          <option value="20">20 Questions - Standard</option>
+          <option value="50">50 Questions - Deep Practice</option>
+          <option value="100" selected>All 100 Questions - Full Sim</option>
+        </select>
+        <select id="topicSel" class="sel">
+          <option value="all">All Topics</option>
+          <option value="OOP">OOP Principles</option>
+          <option value="Syntax">Java Syntax &amp; Basics</option>
+          <option value="UML">UML &amp; Diagrams</option>
+          <option value="Exceptions">Exception Handling</option>
+          <option value="File I/O">File I/O</option>
+          <option value="GUI">GUI / Swing</option>
+        </select>
+        <button class="btn-p" onclick="startBank()">Start Quiz</button>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill">OOP</span><span class="pill">Inheritance</span><span class="pill">Polymorphism</span>
+      <span class="pill">Interfaces</span><span class="pill">Abstract Classes</span><span class="pill">Exceptions</span>
+      <span class="pill">File I/O</span><span class="pill">UML</span><span class="pill">GUI/Swing</span>
+      <span class="pill">Java Syntax</span><span class="pill">Constructors</span><span class="pill">Access
+        Modifiers</span>
     </div>
   </div>
 
-  <div class="landing-box">
-    <div id="bankOpts" style="display:flex;flex-direction:column;gap:.65rem">
-      <select id="qCount" class="sel">
-        <option value="10">10 Questions - Quick Drill</option>
-        <option value="20">20 Questions - Standard</option>
-        <option value="50">50 Questions - Deep Practice</option>
-        <option value="100" selected>All 100 Questions - Full Sim</option>
-      </select>
-      <select id="topicSel" class="sel">
-        <option value="all">All Topics</option>
-        <option value="OOP">OOP Principles</option>
-        <option value="Syntax">Java Syntax &amp; Basics</option>
-        <option value="UML">UML &amp; Diagrams</option>
-        <option value="Exceptions">Exception Handling</option>
-        <option value="File I/O">File I/O</option>
-        <option value="GUI">GUI / Swing</option>
-      </select>
-      <button class="btn-p" onclick="startBank()">Start Quiz</button>
+  <!-- QUIZ -->
+  <div id="quiz" class="screen hidden">
+    <div class="q-top">
+      <div class="q-inf">
+        <div class="q-lbl">QUESTION</div>
+        <div class="q-n"><span id="qCur">1</span> <span style="color:var(--muted);font-size:.95rem">/ <span
+              id="qTot">100</span></span></div>
+      </div>
+      <div class="sc-chip">Score: <span id="scDisp">0</span></div>
+    </div>
+    <div class="prog">
+      <div class="prog-f" id="pFill" style="width:0%"></div>
+    </div>
+    <div class="qcard" id="qcard">
+      <div class="tag-row">
+        <span class="tc" id="qTopic"></span>
+        <span class="sc2" id="qSrc"></span>
+      </div>
+      <div class="qt" id="qText"></div>
+      <div id="qCode"></div>
+      <div class="opts" id="opts"></div>
+      <div id="expBox" class="exp hidden"></div>
+    </div>
+    <div class="q-footer">
+      <button class="btn-quit" onclick="showLanding()">✕ Quit</button>
+      <button class="btn-next" id="btnNext" onclick="doNext()" disabled>Next →</button>
     </div>
   </div>
 
-  <div class="pills">
-    <span class="pill">OOP</span><span class="pill">Inheritance</span><span class="pill">Polymorphism</span>
-    <span class="pill">Interfaces</span><span class="pill">Abstract Classes</span><span class="pill">Exceptions</span>
-    <span class="pill">File I/O</span><span class="pill">UML</span><span class="pill">GUI/Swing</span>
-    <span class="pill">Java Syntax</span><span class="pill">Constructors</span><span class="pill">Access Modifiers</span>
-  </div>
-</div>
-
-<!-- QUIZ -->
-<div id="quiz" class="screen hidden">
-  <div class="q-top">
-    <div class="q-inf">
-      <div class="q-lbl">QUESTION</div>
-      <div class="q-n"><span id="qCur">1</span> <span style="color:var(--muted);font-size:.95rem">/ <span id="qTot">100</span></span></div>
+  <!-- RESULTS -->
+  <div id="results" class="screen hidden">
+    <span class="badge">Quiz Complete ✦</span>
+    <div class="res-ring" id="resRing">
+      <div class="res-inner">
+        <div class="res-big" id="resBig">0/0</div>
+        <div class="res-sm">SCORE</div>
+      </div>
     </div>
-    <div class="sc-chip">Score: <span id="scDisp">0</span></div>
-  </div>
-  <div class="prog"><div class="prog-f" id="pFill" style="width:0%"></div></div>
-  <div class="qcard" id="qcard">
-    <div class="tag-row">
-      <span class="tc" id="qTopic"></span>
-      <span class="sc2" id="qSrc"></span>
+    <div class="res-grade" id="resGrade"></div>
+    <div class="res-msg" id="resMsg"></div>
+    <div class="stats">
+      <div class="stat">
+        <div class="sv g" id="stC">0</div>
+        <div class="sl">Correct</div>
+      </div>
+      <div class="stat">
+        <div class="sv r" id="stW">0</div>
+        <div class="sl">Wrong</div>
+      </div>
+      <div class="stat">
+        <div class="sv y" id="stA">0%</div>
+        <div class="sl">Accuracy</div>
+      </div>
     </div>
-    <div class="qt" id="qText"></div>
-    <div id="qCode"></div>
-    <div class="opts" id="opts"></div>
-    <div id="expBox" class="exp hidden"></div>
+    <div class="breakdown" id="bkdn"></div>
+    <div class="res-btns">
+      <button class="btn-p" onclick="retrySame()">↻ Retry Same Set</button>
+      <button class="btn-p" onclick="showLanding()">← Back to Home</button>
+    </div>
   </div>
-  <div class="q-footer">
-    <button class="btn-quit" onclick="showLanding()">✕ Quit</button>
-    <button class="btn-next" id="btnNext" onclick="doNext()" disabled>Next →</button>
-  </div>
-</div>
 
-<!-- RESULTS -->
-<div id="results" class="screen hidden">
-  <span class="badge">Quiz Complete ✦</span>
-  <div class="res-ring" id="resRing"><div class="res-inner"><div class="res-big" id="resBig">0/0</div><div class="res-sm">SCORE</div></div></div>
-  <div class="res-grade" id="resGrade"></div>
-  <div class="res-msg" id="resMsg"></div>
-  <div class="stats">
-    <div class="stat"><div class="sv g" id="stC">0</div><div class="sl">Correct</div></div>
-    <div class="stat"><div class="sv r" id="stW">0</div><div class="sl">Wrong</div></div>
-    <div class="stat"><div class="sv y" id="stA">0%</div><div class="sl">Accuracy</div></div>
-  </div>
-  <div class="breakdown" id="bkdn"></div>
-  <div class="res-btns">
-    <button class="btn-p" onclick="retrySame()">↻ Retry Same Set</button>
-    <button class="btn-p" onclick="showLanding()">← Back to Home</button>
-  </div>
-</div>
+  <script>
+    // ══════════════════════════════════════════════════════
+    //  QUESTION BANK — 100 questions from 3 APU exam PDFs
 
-<script>
-// ══════════════════════════════════════════════════════
-//  QUESTION BANK — 100 questions from 3 APU exam PDFs
-
-// ══════════════════════════════════════════════════════
-const BANK=[
-// ── PDF 1: CT038-3-2-OODJ Final Exam ──
-{id:1,topic:"OOP",src:"Final Exam #1",q:"Which of the following is WRONG about constructors?",code:"",opts:["A constructor cannot be inherited by a subclass.","Constructors have return types.","A class can have more than one constructor.","A constructor's name must be the same as the class name."],ans:1,exp:"Constructors do NOT have return types — not even void. All other options (no inheritance, multiple allowed, same name as class) are true."},
-{id:2,topic:"OOP",src:"Final Exam #1",q:"What is the process of defining more than one method with the same name but different parameters in a class?",code:"",opts:["Method overriding","Method overloading","Method invocation","Method declaration"],ans:1,exp:"Method overloading = same name, different parameters in the same class. Overriding = redefining a parent method in a subclass."},
-{id:3,topic:"OOP",src:"Final Exam #1",q:"What is the purpose of encapsulation?",code:"",opts:["To hide implementation details and expose only necessary features","For declaring variables in a class","To define methods in a class","To achieve multiple inheritance"],ans:0,exp:"Encapsulation bundles data and restricts direct access, exposing only needed features through getters/setters."},
-{id:4,topic:"OOP",src:"Final Exam #1",q:"Which feature of OOP derives one class from another?",code:"",opts:["Data hiding","Encapsulation","Inheritance","Polymorphism"],ans:2,exp:"Inheritance lets a subclass acquire properties and behaviours from a parent class using the 'extends' keyword."},
-{id:5,topic:"UML",src:"Final Exam #1",q:"Which one is NOT applicable to an Actor in a Use Case Diagram?",code:"",opts:["An actor can interact with any number of use cases.","An actor can interact directly with other actors.","An actor must be placed outside the system boundary.","An actor specifies a role played by a user or external system."],ans:1,exp:"Actors interact with use cases, not directly with other actors. Direct actor-to-actor interaction is not part of Use Case Diagrams."},
-{id:6,topic:"OOP",src:"Final Exam #1",q:"Which option is FALSE about the final keyword?",code:"",opts:["A final method cannot be overridden in its subclasses.","A final class cannot be extended.","A final class cannot extend other classes.","A final method can be inherited."],ans:2,exp:"A final class CAN extend other classes — it just cannot BE extended (subclassed). The other three options are all true."},
-{id:7,topic:"UML",src:"Final Exam #1",q:"A PC is composed of a motherboard, disk drives, and I/O devices — sold as a single unit without optional configurations. In a class diagram this is:",code:"",opts:["Association","Aggregation","Composition","Generalisation"],ans:2,exp:"Composition is the strongest 'part-of' relationship where parts cannot exist independently. A PC sold as one inseparable unit = Composition."},
-{id:8,topic:"Syntax",src:"Final Exam #1",q:"What will be the output of this program?",code:`class Car{
+    // ══════════════════════════════════════════════════════
+    const BANK = [
+      // ── PDF 1: CT038-3-2-OODJ Final Exam ──
+      { id: 1, topic: "OOP", src: "Final Exam #1", q: "Which of the following is WRONG about constructors?", code: "", opts: ["A constructor cannot be inherited by a subclass.", "Constructors have return types.", "A class can have more than one constructor.", "A constructor's name must be the same as the class name."], ans: 1, exp: "Constructors do NOT have return types — not even void. All other options (no inheritance, multiple allowed, same name as class) are true." },
+      { id: 2, topic: "OOP", src: "Final Exam #1", q: "What is the process of defining more than one method with the same name but different parameters in a class?", code: "", opts: ["Method overriding", "Method overloading", "Method invocation", "Method declaration"], ans: 1, exp: "Method overloading = same name, different parameters in the same class. Overriding = redefining a parent method in a subclass." },
+      { id: 3, topic: "OOP", src: "Final Exam #1", q: "What is the purpose of encapsulation?", code: "", opts: ["To hide implementation details and expose only necessary features", "For declaring variables in a class", "To define methods in a class", "To achieve multiple inheritance"], ans: 0, exp: "Encapsulation bundles data and restricts direct access, exposing only needed features through getters/setters." },
+      { id: 4, topic: "OOP", src: "Final Exam #1", q: "Which feature of OOP derives one class from another?", code: "", opts: ["Data hiding", "Encapsulation", "Inheritance", "Polymorphism"], ans: 2, exp: "Inheritance lets a subclass acquire properties and behaviours from a parent class using the 'extends' keyword." },
+      { id: 5, topic: "UML", src: "Final Exam #1", q: "Which one is NOT applicable to an Actor in a Use Case Diagram?", code: "", opts: ["An actor can interact with any number of use cases.", "An actor can interact directly with other actors.", "An actor must be placed outside the system boundary.", "An actor specifies a role played by a user or external system."], ans: 1, exp: "Actors interact with use cases, not directly with other actors. Direct actor-to-actor interaction is not part of Use Case Diagrams." },
+      { id: 6, topic: "OOP", src: "Final Exam #1", q: "Which option is FALSE about the final keyword?", code: "", opts: ["A final method cannot be overridden in its subclasses.", "A final class cannot be extended.", "A final class cannot extend other classes.", "A final method can be inherited."], ans: 2, exp: "A final class CAN extend other classes — it just cannot BE extended (subclassed). The other three options are all true." },
+      { id: 7, topic: "UML", src: "Final Exam #1", q: "A PC is composed of a motherboard, disk drives, and I/O devices — sold as a single unit without optional configurations. In a class diagram this is:", code: "", opts: ["Association", "Aggregation", "Composition", "Generalisation"], ans: 2, exp: "Composition is the strongest 'part-of' relationship where parts cannot exist independently. A PC sold as one inseparable unit = Composition." },
+      {
+        id: 8, topic: "Syntax", src: "Final Exam #1", q: "What will be the output of this program?", code: `class Car{
   public Car(){ System.out.println("Class Car"); }
   public void vehicleType(){ System.out.println("Vehicle Type: Car"); }
 }
@@ -237,8 +909,10 @@ public class Vios extends Toyota{
     myCar.vehicleType();
     myCar.speed();
   }
-}`,opts:["Class Toyota / Toyota Model: Vios / Vehicle Type: Car / Max: 90Kmph","Class Car / Class Toyota / Toyota Model: Vios / Vehicle Type: Car / Max: 80Kmph","Class Car / Class Toyota / Toyota Model: Vios / Vehicle Type: Car / Max: 90Kmph","Class Car / Class Toyota / Vehicle Type: Car / Max: 90Kmph"],ans:1,exp:"Constructors chain up: Car→Toyota→Vios prints each. vehicleType() from Car runs. speed() is overridden in Vios so 80Kmph prints, not 90."},
-{id:9,topic:"OOP",src:"Final Exam #1",q:"What will be the output?",code:`interface calculate{ void cal(int item); }
+}`, opts: ["Class Toyota / Toyota Model: Vios / Vehicle Type: Car / Max: 90Kmph", "Class Car / Class Toyota / Toyota Model: Vios / Vehicle Type: Car / Max: 80Kmph", "Class Car / Class Toyota / Toyota Model: Vios / Vehicle Type: Car / Max: 90Kmph", "Class Car / Class Toyota / Vehicle Type: Car / Max: 90Kmph"], ans: 1, exp: "Constructors chain up: Car→Toyota→Vios prints each. vehicleType() from Car runs. speed() is overridden in Vios so 80Kmph prints, not 90."
+      },
+      {
+        id: 9, topic: "OOP", src: "Final Exam #1", q: "What will be the output?", code: `interface calculate{ void cal(int item); }
 class display implements calculate{
   int x;
   public void cal(int item){ x = item * item; }
@@ -250,47 +924,55 @@ class interfaces{
     arr.cal(-2);
     System.out.print(arr.x);
   }
-}`,opts:["0","-2","4","-4"],ans:2,exp:"cal(-2) computes x = -2 * -2 = 4. Squaring a negative gives a positive result."},
-{id:10,topic:"UML",src:"Final Exam #1",q:"How are associations modelled in a class diagram?",code:"",opts:["Through the objects of classes","Through constructor","Through methods of classes","Through inheritance"],ans:0,exp:"Associations represent relationships between objects of different classes, shown as a line between class boxes in a class diagram."},
-{id:11,topic:"GUI",src:"Final Exam #1",q:"Which component gives a drop-down list of options?",code:"",opts:["JList","JButton","JComboBox","JDropDownList"],ans:2,exp:"JComboBox provides a drop-down list. JList shows a scrollable list. JDropDownList does not exist in Java Swing."},
-{id:12,topic:"Exceptions",src:"Final Exam #1",q:"What is the purpose of the 'catch' block in exception handling?",code:"",opts:["It specifies the exception message.","It specifies the exception type.","It contains the code that might throw an exception.","It catches and handles exceptions."],ans:3,exp:"The catch block handles the exception. The try block contains risky code. The catch block defines what to do when an exception occurs."},
-{id:13,topic:"Exceptions",src:"Final Exam #1",q:"What is the output of the following code?",code:`try{
+}`, opts: ["0", "-2", "4", "-4"], ans: 2, exp: "cal(-2) computes x = -2 * -2 = 4. Squaring a negative gives a positive result."
+      },
+      { id: 10, topic: "UML", src: "Final Exam #1", q: "How are associations modelled in a class diagram?", code: "", opts: ["Through the objects of classes", "Through constructor", "Through methods of classes", "Through inheritance"], ans: 0, exp: "Associations represent relationships between objects of different classes, shown as a line between class boxes in a class diagram." },
+      { id: 11, topic: "GUI", src: "Final Exam #1", q: "Which component gives a drop-down list of options?", code: "", opts: ["JList", "JButton", "JComboBox", "JDropDownList"], ans: 2, exp: "JComboBox provides a drop-down list. JList shows a scrollable list. JDropDownList does not exist in Java Swing." },
+      { id: 12, topic: "Exceptions", src: "Final Exam #1", q: "What is the purpose of the 'catch' block in exception handling?", code: "", opts: ["It specifies the exception message.", "It specifies the exception type.", "It contains the code that might throw an exception.", "It catches and handles exceptions."], ans: 3, exp: "The catch block handles the exception. The try block contains risky code. The catch block defines what to do when an exception occurs." },
+      {
+        id: 13, topic: "Exceptions", src: "Final Exam #1", q: "What is the output of the following code?", code: `try{
   int[] arr = new int[5];
   int value = arr[0];
 }catch(NullPointerException e){
   System.out.println("NullPointerException!");
 }finally{
   System.out.println("Finally Block!");
-}`,opts:["The program hangs","NullPointerException!","Compilation error","Finally Block!"],ans:3,exp:"arr[0] on a valid int[5] returns 0 — no exception thrown. The catch is skipped. But finally ALWAYS executes regardless."},
-{id:14,topic:"File I/O",src:"Final Exam #1",q:"Which class in Java is used to read data line by line from a file?",code:"",opts:["BufferedReader","FileInputStream","FileWriter","OutputStream"],ans:0,exp:"BufferedReader with readLine() is the standard way to read a file line by line efficiently."},
-{id:15,topic:"File I/O",src:"Final Exam #1",q:"What does 'true' mean in: new FileWriter(file, true)?",code:`File file = new File("write.txt");
+}`, opts: ["The program hangs", "NullPointerException!", "Compilation error", "Finally Block!"], ans: 3, exp: "arr[0] on a valid int[5] returns 0 — no exception thrown. The catch is skipped. But finally ALWAYS executes regardless."
+      },
+      { id: 14, topic: "File I/O", src: "Final Exam #1", q: "Which class in Java is used to read data line by line from a file?", code: "", opts: ["BufferedReader", "FileInputStream", "FileWriter", "OutputStream"], ans: 0, exp: "BufferedReader with readLine() is the standard way to read a file line by line efficiently." },
+      {
+        id: 15, topic: "File I/O", src: "Final Exam #1", q: "What does 'true' mean in: new FileWriter(file, true)?", code: `File file = new File("write.txt");
 FileWriter fr = new FileWriter(file, true);
 fr.write("data");
-fr.close();`,opts:["Appending text data to a text file","Appending binary data to a binary file","Appending buffered data to any file","Checking if the file exists"],ans:0,exp:"The boolean 'true' enables append mode — new data is added at the END of the file, not overwriting existing content."},
-{id:16,topic:"File I/O",src:"Final Exam #1",q:"What is the output if input is 'B@nan@s'?",code:`char c;
+fr.close();`, opts: ["Appending text data to a text file", "Appending binary data to a binary file", "Appending buffered data to any file", "Checking if the file exists"], ans: 0, exp: "The boolean 'true' enables append mode — new data is added at the END of the file, not overwriting existing content."
+      },
+      {
+        id: 16, topic: "File I/O", src: "Final Exam #1", q: "What is the output if input is 'B@nan@s'?", code: `char c;
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 do{
   c = (char) br.read();
   System.out.print(c);
-}while(c != '@');`,opts:["B@nan@s","B@nan@","B@nan","B@"],ans:1,exp:"do-while prints then checks. It prints each char including the second '@', THEN finds c=='@' and stops. Output: B@nan@"},
-{id:17,topic:"OOP",src:"Final Exam #1",q:"In an abstract class, what does an abstract method represent?",code:"",opts:["A method with a detailed implementation.","A method with implementation that cannot be overridden.","A method with no body which must be overridden in a derived class.","A method that can be accessed from anywhere."],ans:2,exp:"Abstract methods have NO body. Concrete subclasses MUST override them to provide the actual implementation."},
-{id:18,topic:"OOP",src:"Final Exam #1",q:"Which access modifier restricts access to within the same class only?",code:"",opts:["public","private","protected","default"],ans:1,exp:"'private' is the most restrictive — accessible only within the declaring class. Even subclasses cannot access private members directly."},
-{id:19,topic:"GUI",src:"Final Exam #1",q:"Which methods are required to ensure visibility of a JFrame? (i) setBounds() (ii) setSize() (iii) setLayout() (iv) setVisible(true)",code:"",opts:["i and iv only","ii and iv only","i, iii, and iv only","ii, iii and iv only"],ans:1,exp:"Minimum required: setSize() for dimensions AND setVisible(true) to display. setLayout and setBounds are optional/alternative."},
-{id:20,topic:"UML",src:"Final Exam #1",q:"Which is NOT a principle of software modeling?",code:"",opts:["Using a single model is sufficient.","Choosing the right model matters based on project scope.","Each model has a different level of precision.","The best models are connected to real-world situations."],ans:0,exp:"Multiple models are ALWAYS needed. 'A single model is sufficient' is the false statement — it contradicts modeling principles."},
+}while(c != '@');`, opts: ["B@nan@s", "B@nan@", "B@nan", "B@"], ans: 1, exp: "do-while prints then checks. It prints each char including the second '@', THEN finds c=='@' and stops. Output: B@nan@"
+      },
+      { id: 17, topic: "OOP", src: "Final Exam #1", q: "In an abstract class, what does an abstract method represent?", code: "", opts: ["A method with a detailed implementation.", "A method with implementation that cannot be overridden.", "A method with no body which must be overridden in a derived class.", "A method that can be accessed from anywhere."], ans: 2, exp: "Abstract methods have NO body. Concrete subclasses MUST override them to provide the actual implementation." },
+      { id: 18, topic: "OOP", src: "Final Exam #1", q: "Which access modifier restricts access to within the same class only?", code: "", opts: ["public", "private", "protected", "default"], ans: 1, exp: "'private' is the most restrictive — accessible only within the declaring class. Even subclasses cannot access private members directly." },
+      { id: 19, topic: "GUI", src: "Final Exam #1", q: "Which methods are required to ensure visibility of a JFrame? (i) setBounds() (ii) setSize() (iii) setLayout() (iv) setVisible(true)", code: "", opts: ["i and iv only", "ii and iv only", "i, iii, and iv only", "ii, iii and iv only"], ans: 1, exp: "Minimum required: setSize() for dimensions AND setVisible(true) to display. setLayout and setBounds are optional/alternative." },
+      { id: 20, topic: "UML", src: "Final Exam #1", q: "Which is NOT a principle of software modeling?", code: "", opts: ["Using a single model is sufficient.", "Choosing the right model matters based on project scope.", "Each model has a different level of precision.", "The best models are connected to real-world situations."], ans: 0, exp: "Multiple models are ALWAYS needed. 'A single model is sufficient' is the false statement — it contradicts modeling principles." },
 
-// ── PDF 2: Final Exam Aug 2025 ──
-{id:21,topic:"UML",src:"Final Exam #2",q:"Which is NOT a principle of modelling?",code:"",opts:["The choice of model is important.","Every model may be expressed at different levels of precision.","The best models are connected to reality.","A single model must be sufficient."],ans:3,exp:"One of the core modeling principles is that MULTIPLE models are needed. 'A single model must be sufficient' is false."},
-{id:22,topic:"OOP",src:"Final Exam #2",q:"Polymorphism in Java can be achieved using all EXCEPT:",code:"",opts:["Method overloading","Method overriding","Constructor overriding","Constructor overloading"],ans:2,exp:"Constructors CANNOT be overridden — they are not inherited. Constructor overloading is valid. Both method forms achieve polymorphism."},
-{id:23,topic:"OOP",src:"Final Exam #2",q:"What is inheritance in Java?",code:"",opts:["Creating multiple instances of a class","Hiding data and methods within a class","Reusing code from existing classes","Combining data and methods into a single unit"],ans:2,exp:"Inheritance lets a subclass reuse properties and methods from a parent class. Hiding data is encapsulation; combining data and methods is also encapsulation."},
-{id:24,topic:"UML",src:"Final Exam #2",q:"Which relationship type is NOT allowed in a Use Case Diagram?",code:"",opts:["Association between actors and use cases","Extend between actors and use cases","Generalisation between actors and use cases","Include between two use cases"],ans:1,exp:"<<extend>> is a relationship between two USE CASES only, not between an actor and a use case."},
-{id:25,topic:"OOP",src:"Final Exam #2",q:"What does 'final' indicate when applied to a variable?",code:"",opts:["The variable cannot be reassigned after initialization","The variable cannot be accessed outside the class","The variable is a class variable","The variable can be modified using a setter method"],ans:0,exp:"A final variable is a constant — once assigned, it cannot be reassigned. It has nothing to do with access level or class variables."},
-{id:26,topic:"OOP",src:"Final Exam #2",q:"In Java, what is the visibility of a 'protected' attribute?",code:"",opts:["Accessible only within its own package","Accessible only within subclasses","Accessible within its own package AND subclasses","Accessible from anywhere"],ans:2,exp:"Protected grants access to (1) same class, (2) same package classes, and (3) subclasses in any package. 'public' is accessible from anywhere."},
-{id:27,topic:"OOP",src:"Final Exam #2",q:"Which method allows other methods to MODIFY a private data value?",code:"",opts:["accessor","mutator","utility","static"],ans:1,exp:"A mutator (setter) method modifies private attributes. An accessor (getter) only reads them without modification."},
-{id:28,topic:"UML",src:"Final Exam #2",q:"A Library contains many Books. Books can exist independently of the library. Which UML notation applies?",code:"",opts:["Open diamond (aggregation)","Filled diamond (composition)","Dashed arrow (realisation)","Plain line (association)"],ans:0,exp:"Aggregation (open/hollow diamond) = 'has-a' but parts can exist independently. Composition (filled) = parts cannot survive without the whole."},
-{id:29,topic:"Exceptions",src:"Final Exam #2",q:"Which keyword is used to manually throw an exception?",code:"",opts:["try","catch","throw","finally"],ans:2,exp:"'throw' explicitly throws an exception object. 'throws' in a method signature declares the exception. 'try/catch/finally' are blocks, not throw statements."},
-{id:30,topic:"File I/O",src:"Final Exam #2",q:"Which method is used to write into a file?",code:"",opts:["put()","putFile()","write()","writeFile()"],ans:2,exp:"FileWriter and BufferedWriter use write() to write data. put(), putFile(), and writeFile() are not standard Java file I/O methods."},
-{id:31,topic:"GUI",src:"Final Exam #2",q:"___ is a container component used to organize and group other GUI components.",code:"",opts:["JPanel","JGridLayout","JFrame","JWindow"],ans:0,exp:"JPanel is a lightweight container to group components. JFrame is the main window. JGridLayout is a layout manager (not a container component itself)."},
-{id:32,topic:"OOP",src:"Final Exam #2",q:"What will the following program output?",code:`class ClassA{
+      // ── PDF 2: Final Exam Aug 2025 ──
+      { id: 21, topic: "UML", src: "Final Exam #2", q: "Which is NOT a principle of modelling?", code: "", opts: ["The choice of model is important.", "Every model may be expressed at different levels of precision.", "The best models are connected to reality.", "A single model must be sufficient."], ans: 3, exp: "One of the core modeling principles is that MULTIPLE models are needed. 'A single model must be sufficient' is false." },
+      { id: 22, topic: "OOP", src: "Final Exam #2", q: "Polymorphism in Java can be achieved using all EXCEPT:", code: "", opts: ["Method overloading", "Method overriding", "Constructor overriding", "Constructor overloading"], ans: 2, exp: "Constructors CANNOT be overridden — they are not inherited. Constructor overloading is valid. Both method forms achieve polymorphism." },
+      { id: 23, topic: "OOP", src: "Final Exam #2", q: "What is inheritance in Java?", code: "", opts: ["Creating multiple instances of a class", "Hiding data and methods within a class", "Reusing code from existing classes", "Combining data and methods into a single unit"], ans: 2, exp: "Inheritance lets a subclass reuse properties and methods from a parent class. Hiding data is encapsulation; combining data and methods is also encapsulation." },
+      { id: 24, topic: "UML", src: "Final Exam #2", q: "Which relationship type is NOT allowed in a Use Case Diagram?", code: "", opts: ["Association between actors and use cases", "Extend between actors and use cases", "Generalisation between actors and use cases", "Include between two use cases"], ans: 1, exp: "<<extend>> is a relationship between two USE CASES only, not between an actor and a use case." },
+      { id: 25, topic: "OOP", src: "Final Exam #2", q: "What does 'final' indicate when applied to a variable?", code: "", opts: ["The variable cannot be reassigned after initialization", "The variable cannot be accessed outside the class", "The variable is a class variable", "The variable can be modified using a setter method"], ans: 0, exp: "A final variable is a constant — once assigned, it cannot be reassigned. It has nothing to do with access level or class variables." },
+      { id: 26, topic: "OOP", src: "Final Exam #2", q: "In Java, what is the visibility of a 'protected' attribute?", code: "", opts: ["Accessible only within its own package", "Accessible only within subclasses", "Accessible within its own package AND subclasses", "Accessible from anywhere"], ans: 2, exp: "Protected grants access to (1) same class, (2) same package classes, and (3) subclasses in any package. 'public' is accessible from anywhere." },
+      { id: 27, topic: "OOP", src: "Final Exam #2", q: "Which method allows other methods to MODIFY a private data value?", code: "", opts: ["accessor", "mutator", "utility", "static"], ans: 1, exp: "A mutator (setter) method modifies private attributes. An accessor (getter) only reads them without modification." },
+      { id: 28, topic: "UML", src: "Final Exam #2", q: "A Library contains many Books. Books can exist independently of the library. Which UML notation applies?", code: "", opts: ["Open diamond (aggregation)", "Filled diamond (composition)", "Dashed arrow (realisation)", "Plain line (association)"], ans: 0, exp: "Aggregation (open/hollow diamond) = 'has-a' but parts can exist independently. Composition (filled) = parts cannot survive without the whole." },
+      { id: 29, topic: "Exceptions", src: "Final Exam #2", q: "Which keyword is used to manually throw an exception?", code: "", opts: ["try", "catch", "throw", "finally"], ans: 2, exp: "'throw' explicitly throws an exception object. 'throws' in a method signature declares the exception. 'try/catch/finally' are blocks, not throw statements." },
+      { id: 30, topic: "File I/O", src: "Final Exam #2", q: "Which method is used to write into a file?", code: "", opts: ["put()", "putFile()", "write()", "writeFile()"], ans: 2, exp: "FileWriter and BufferedWriter use write() to write data. put(), putFile(), and writeFile() are not standard Java file I/O methods." },
+      { id: 31, topic: "GUI", src: "Final Exam #2", q: "___ is a container component used to organize and group other GUI components.", code: "", opts: ["JPanel", "JGridLayout", "JFrame", "JWindow"], ans: 0, exp: "JPanel is a lightweight container to group components. JFrame is the main window. JGridLayout is a layout manager (not a container component itself)." },
+      {
+        id: 32, topic: "OOP", src: "Final Exam #2", q: "What will the following program output?", code: `class ClassA{
   public ClassA(){ System.out.print("Constructor of ClassA "); }
 }
 class ClassB extends ClassA{
@@ -301,10 +983,12 @@ class ClassC extends ClassB{
 }
 public class TestClass{
   public static void main(String[] args){ ClassC objC = new ClassC(); }
-}`,opts:["Constructor of Class C","Constructor of Class C Constructor of Class B","Constructor of Class A Constructor of Class B","Constructor of Class A Constructor of Class B Constructor of Class C"],ans:3,exp:"new ClassC() chains constructors up the hierarchy: ClassA→ClassB→ClassC, printing each in parent-to-child order."},
-{id:33,topic:"OOP",src:"Final Exam #2",q:"OOP advantages — which is NOT one?",code:"",opts:["Enhanced code reusability.","Code is easier to maintain and update.","Better data security.","OOP is suitable for all kinds of problems."],ans:3,exp:"OOP is NOT ideal for all problems (e.g., simple scripts, mathematical computations). Options a, b, c are genuine OOP advantages."},
-{id:34,topic:"OOP",src:"Final Exam #2",q:"Which OOP feature lets a single method behave differently based on the object?",code:"",opts:["Abstraction","Polymorphism","Encapsulation","Inheritance"],ans:1,exp:"Polymorphism = 'many forms'. A method behaves differently based on which object calls it — achieved via overloading or overriding."},
-{id:35,topic:"OOP",src:"Final Exam #2",q:"What is the output of the following code? (Look carefully for errors)",code:`abstract class MyAbstract{
+}`, opts: ["Constructor of Class C", "Constructor of Class C Constructor of Class B", "Constructor of Class A Constructor of Class B", "Constructor of Class A Constructor of Class B Constructor of Class C"], ans: 3, exp: "new ClassC() chains constructors up the hierarchy: ClassA→ClassB→ClassC, printing each in parent-to-child order."
+      },
+      { id: 33, topic: "OOP", src: "Final Exam #2", q: "OOP advantages — which is NOT one?", code: "", opts: ["Enhanced code reusability.", "Code is easier to maintain and update.", "Better data security.", "OOP is suitable for all kinds of problems."], ans: 3, exp: "OOP is NOT ideal for all problems (e.g., simple scripts, mathematical computations). Options a, b, c are genuine OOP advantages." },
+      { id: 34, topic: "OOP", src: "Final Exam #2", q: "Which OOP feature lets a single method behave differently based on the object?", code: "", opts: ["Abstraction", "Polymorphism", "Encapsulation", "Inheritance"], ans: 1, exp: "Polymorphism = 'many forms'. A method behaves differently based on which object calls it — achieved via overloading or overriding." },
+      {
+        id: 35, topic: "OOP", src: "Final Exam #2", q: "What is the output of the following code? (Look carefully for errors)", code: `abstract class MyAbstract{
   abstract void myMethod(){
     System.out.println("myMethod in MyAbstract class");
   }
@@ -313,10 +997,12 @@ class MyClass extends MyAbstract{
   public void myMethod(){
     System.out.println("myMethod in MyClass class");
   }
-}`,opts:["myMethod in MyClass class","myMethod in MyAbstract class","Both lines print","Error"],ans:3,exp:"Abstract methods CANNOT have a body. Writing 'abstract void myMethod(){ }' with curly braces causes a compilation error."},
-{id:36,topic:"OOP",src:"Final Exam #2",q:"When would you use a private constructor?",code:"",opts:["To prevent external code from directly creating instances.","To ensure multiple instances exist at any time.","To allow any class to create instances easily.","To create a temporary instance."],ans:0,exp:"Private constructors are used in patterns like Singleton — preventing external instantiation and controlling when/how objects are created."},
-{id:37,topic:"OOP",src:"Final Exam #2",q:"When a class implements an interface, which methods must be implemented?",code:"",opts:["Only abstract methods","Only non-abstract methods","Both abstract and non-abstract methods","Only static methods"],ans:0,exp:"A class must implement all ABSTRACT methods from the interface. Default methods (with 'default' keyword) are optional to override."},
-{id:38,topic:"Exceptions",src:"Final Exam #2",q:"What is the output of the following code?",code:`try{
+}`, opts: ["myMethod in MyClass class", "myMethod in MyAbstract class", "Both lines print", "Error"], ans: 3, exp: "Abstract methods CANNOT have a body. Writing 'abstract void myMethod(){ }' with curly braces causes a compilation error."
+      },
+      { id: 36, topic: "OOP", src: "Final Exam #2", q: "When would you use a private constructor?", code: "", opts: ["To prevent external code from directly creating instances.", "To ensure multiple instances exist at any time.", "To allow any class to create instances easily.", "To create a temporary instance."], ans: 0, exp: "Private constructors are used in patterns like Singleton — preventing external instantiation and controlling when/how objects are created." },
+      { id: 37, topic: "OOP", src: "Final Exam #2", q: "When a class implements an interface, which methods must be implemented?", code: "", opts: ["Only abstract methods", "Only non-abstract methods", "Both abstract and non-abstract methods", "Only static methods"], ans: 0, exp: "A class must implement all ABSTRACT methods from the interface. Default methods (with 'default' keyword) are optional to override." },
+      {
+        id: 38, topic: "Exceptions", src: "Final Exam #2", q: "What is the output of the following code?", code: `try{
   String s = "Hello";
   int num = Integer.parseInt(s);
 }catch(NumberFormatException e){
@@ -325,21 +1011,25 @@ class MyClass extends MyAbstract{
   System.out.println("Exception!");
 }finally{
   System.out.println("Finally Block!");
-}`,opts:["NumberFormatException!","Exception!","NumberFormatException! Finally Block!","Finally Block!"],ans:2,exp:"Parsing 'Hello' as int throws NumberFormatException. First catch handles it. Then finally always executes. Both lines print."},
-{id:39,topic:"File I/O",src:"Final Exam #2",q:"file.txt contains: This / is / a / Java / Program (one per line). What is output?",code:`String word = "";
+}`, opts: ["NumberFormatException!", "Exception!", "NumberFormatException! Finally Block!", "Finally Block!"], ans: 2, exp: "Parsing 'Hello' as int throws NumberFormatException. First catch handles it. Then finally always executes. Both lines print."
+      },
+      {
+        id: 39, topic: "File I/O", src: "Final Exam #2", q: "file.txt contains: This / is / a / Java / Program (one per line). What is output?", code: `String word = "";
 String cur;
 Scanner input = new Scanner(new File("file.txt"));
 while(input.hasNext()){
   cur = input.next();
   if(cur.length() > word.length()){ word = cur; }
 }
-System.out.println(word);`,opts:["This","Java","Program","This is a Java Program"],ans:2,exp:"Tracks longest word. This=4, is=2, a=1, Java=4 (not > 4), Program=7. Program wins with 7 characters."},
-{id:40,topic:"UML",src:"Final Exam #2",q:"___ is a 'part-of' relationship in a class diagram.",code:"",opts:["Generalisation","Aggregation","Composition","Association"],ans:1,exp:"Aggregation = 'part-of' / 'has-a' where parts can exist independently. Composition is stronger (parts can't survive without the whole)."},
+System.out.println(word);`, opts: ["This", "Java", "Program", "This is a Java Program"], ans: 2, exp: "Tracks longest word. This=4, is=2, a=1, Java=4 (not > 4), Program=7. Program wins with 7 characters."
+      },
+      { id: 40, topic: "UML", src: "Final Exam #2", q: "___ is a 'part-of' relationship in a class diagram.", code: "", opts: ["Generalisation", "Aggregation", "Composition", "Association"], ans: 1, exp: "Aggregation = 'part-of' / 'has-a' where parts can exist independently. Composition is stronger (parts can't survive without the whole)." },
 
-// ── PDF 3: Internal Exam Jan 2026 ──
-{id:41,topic:"OOP",src:"Internal Jan 2026",q:"Which best describes an object in Java?",code:"",opts:["A blueprint for creating classes","A block of code","An instance of a class","A package"],ans:2,exp:"An object is a concrete instance created from a class using 'new'. The class is the blueprint; the object is the actual entity in memory."},
-{id:42,topic:"Syntax",src:"Internal Jan 2026",q:"Which keyword refers to the current object in Java?",code:"",opts:["this","super","static","final"],ans:0,exp:"'this' refers to the current object instance. 'super' is for the parent class. 'static' is class-level. 'final' prevents modification."},
-{id:43,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`public class Main{
+      // ── PDF 3: Internal Exam Jan 2026 ──
+      { id: 41, topic: "OOP", src: "Internal Jan 2026", q: "Which best describes an object in Java?", code: "", opts: ["A blueprint for creating classes", "A block of code", "An instance of a class", "A package"], ans: 2, exp: "An object is a concrete instance created from a class using 'new'. The class is the blueprint; the object is the actual entity in memory." },
+      { id: 42, topic: "Syntax", src: "Internal Jan 2026", q: "Which keyword refers to the current object in Java?", code: "", opts: ["this", "super", "static", "final"], ans: 0, exp: "'this' refers to the current object instance. 'super' is for the parent class. 'static' is class-level. 'final' prevents modification." },
+      {
+        id: 43, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int x = 3;
     while(x > 0){
@@ -347,32 +1037,40 @@ System.out.println(word);`,opts:["This","Java","Program","This is a Java Program
       x--;
     }
   }
-}`,opts:["3 2 1","1 2 3","3 2","Infinite loop"],ans:0,exp:"x starts at 3, prints then decrements. Loop runs while x>0: prints 3, 2, 1 then x=0 and loop ends."},
-{id:44,topic:"Syntax",src:"Internal Jan 2026",q:"Which CANNOT be used as a variable name in Java?",code:"",opts:["count","total_count","float","count2"],ans:2,exp:"'float' is a reserved keyword in Java and cannot be used as an identifier. The others (count, total_count, count2) are valid."},
-{id:45,topic:"Syntax",src:"Internal Jan 2026",q:"What will be the output?",code:`public class Main{
+}`, opts: ["3 2 1", "1 2 3", "3 2", "Infinite loop"], ans: 0, exp: "x starts at 3, prints then decrements. Loop runs while x>0: prints 3, 2, 1 then x=0 and loop ends."
+      },
+      { id: 44, topic: "Syntax", src: "Internal Jan 2026", q: "Which CANNOT be used as a variable name in Java?", code: "", opts: ["count", "total_count", "float", "count2"], ans: 2, exp: "'float' is a reserved keyword in Java and cannot be used as an identifier. The others (count, total_count, count2) are valid." },
+      {
+        id: 45, topic: "Syntax", src: "Internal Jan 2026", q: "What will be the output?", code: `public class Main{
   public static void main(String[] args){
     int a = 5;
     int b = ++a;
     System.out.println(a + " " + b);
   }
-}`,opts:["5 5","5 6","6 6","6 5"],ans:2,exp:"++a is pre-increment: a becomes 6 FIRST, then b is assigned 6. Both a and b equal 6. Post-increment (a++) would give a=6, b=5."},
-{id:46,topic:"OOP",src:"Internal Jan 2026",q:"Which statement about constructors is TRUE?",code:"",opts:["They have a return type","They must be static","They are called automatically when an object is created","They cannot take parameters"],ans:2,exp:"Constructors are automatically called when 'new' is used. They have NO return type, are NOT static, and CAN take parameters."},
-{id:47,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`public class Main{
+}`, opts: ["5 5", "5 6", "6 6", "6 5"], ans: 2, exp: "++a is pre-increment: a becomes 6 FIRST, then b is assigned 6. Both a and b equal 6. Post-increment (a++) would give a=6, b=5."
+      },
+      { id: 46, topic: "OOP", src: "Internal Jan 2026", q: "Which statement about constructors is TRUE?", code: "", opts: ["They have a return type", "They must be static", "They are called automatically when an object is created", "They cannot take parameters"], ans: 2, exp: "Constructors are automatically called when 'new' is used. They have NO return type, are NOT static, and CAN take parameters." },
+      {
+        id: 47, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `public class Main{
   static int x = 10;
   public static void main(String[] args){
     System.out.println(x);
   }
-}`,opts:["0","10","Compile error","Runtime error"],ans:1,exp:"x is a static variable initialized to 10. Static methods can access static variables directly without an object. Output: 10."},
-{id:48,topic:"Syntax",src:"Internal Jan 2026",q:"Which loop is guaranteed to execute at least once?",code:"",opts:["for","while","do-while","enhanced for"],ans:2,exp:"do-while executes its body FIRST, then checks the condition. This guarantees at least one execution regardless of the condition."},
-{id:49,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`public class Main{
+}`, opts: ["0", "10", "Compile error", "Runtime error"], ans: 1, exp: "x is a static variable initialized to 10. Static methods can access static variables directly without an object. Output: 10."
+      },
+      { id: 48, topic: "Syntax", src: "Internal Jan 2026", q: "Which loop is guaranteed to execute at least once?", code: "", opts: ["for", "while", "do-while", "enhanced for"], ans: 2, exp: "do-while executes its body FIRST, then checks the condition. This guarantees at least one execution regardless of the condition." },
+      {
+        id: 49, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     String s = "Java";
     s = s + " Programming";
     System.out.println(s);
   }
-}`,opts:["Java","Programming","Java Programming","Compile error"],ans:2,exp:"String concatenation with '+' joins the two strings. 'Java' + ' Programming' = 'Java Programming'. Output: Java Programming."},
-{id:50,topic:"Syntax",src:"Internal Jan 2026",q:"Which correctly declares a static method?",code:"",opts:["static void show() { }","void static show() { }","public show() static void { }","static show void() { }"],ans:0,exp:"Correct syntax: modifiers first, then return type, then method name. 'static void show()' is correct. Others have wrong keyword ordering."},
-{id:51,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`public class Main{
+}`, opts: ["Java", "Programming", "Java Programming", "Compile error"], ans: 2, exp: "String concatenation with '+' joins the two strings. 'Java' + ' Programming' = 'Java Programming'. Output: Java Programming."
+      },
+      { id: 50, topic: "Syntax", src: "Internal Jan 2026", q: "Which correctly declares a static method?", code: "", opts: ["static void show() { }", "void static show() { }", "public show() static void { }", "static show void() { }"], ans: 0, exp: "Correct syntax: modifiers first, then return type, then method name. 'static void show()' is correct. Others have wrong keyword ordering." },
+      {
+        id: 51, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int i = 1;
     do{
@@ -380,32 +1078,40 @@ System.out.println(word);`,opts:["This","Java","Program","This is a Java Program
       i++;
     }while(i <= 3);
   }
-}`,opts:["1 2 3","0 1 2","1 2","Infinite loop"],ans:0,exp:"i starts at 1. do-while prints then increments. i=1→print 1, i=2→print 2, i=3→print 3, i=4→4<=3 false, stop. Output: 1 2 3."},
-{id:52,topic:"Syntax",src:"Internal Jan 2026",q:"Which keyword prevents a variable from being modified?",code:"",opts:["static","void","final","private"],ans:2,exp:"'final' makes a variable a constant — it cannot be reassigned after initialization. 'private' restricts access, 'static' makes it class-level."},
-{id:53,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`public class Main{
+}`, opts: ["1 2 3", "0 1 2", "1 2", "Infinite loop"], ans: 0, exp: "i starts at 1. do-while prints then increments. i=1→print 1, i=2→print 2, i=3→print 3, i=4→4<=3 false, stop. Output: 1 2 3."
+      },
+      { id: 52, topic: "Syntax", src: "Internal Jan 2026", q: "Which keyword prevents a variable from being modified?", code: "", opts: ["static", "void", "final", "private"], ans: 2, exp: "'final' makes a variable a constant — it cannot be reassigned after initialization. 'private' restricts access, 'static' makes it class-level." },
+      {
+        id: 53, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int x = 10;
     System.out.println(x % 3);
   }
-}`,opts:["1","3","0","Compile error"],ans:0,exp:"% is the modulo/remainder operator. 10 ÷ 3 = 3 remainder 1. So 10 % 3 = 1."},
-{id:54,topic:"Syntax",src:"Internal Jan 2026",q:"Which is TRUE about arrays in Java?",code:"",opts:["Arrays can store different data types","Array size can change dynamically","Array index starts from 1","Array index starts from 0"],ans:3,exp:"Java arrays: zero-indexed (starts at 0), store ONE data type, fixed size. ArrayList can resize — arrays cannot."},
-{id:55,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`public class Main{
+}`, opts: ["1", "3", "0", "Compile error"], ans: 0, exp: "% is the modulo/remainder operator. 10 ÷ 3 = 3 remainder 1. So 10 % 3 = 1."
+      },
+      { id: 54, topic: "Syntax", src: "Internal Jan 2026", q: "Which is TRUE about arrays in Java?", code: "", opts: ["Arrays can store different data types", "Array size can change dynamically", "Array index starts from 1", "Array index starts from 0"], ans: 3, exp: "Java arrays: zero-indexed (starts at 0), store ONE data type, fixed size. ArrayList can resize — arrays cannot." },
+      {
+        id: 55, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     for(int i = 1; i <= 3; i++){
       if(i == 2) continue;
       System.out.print(i + " ");
     }
   }
-}`,opts:["1 2 3","2","1 3","3"],ans:2,exp:"'continue' skips the rest of the loop body for that iteration. When i=2, the print is skipped. Only 1 and 3 print."},
-{id:56,topic:"OOP",src:"Internal Jan 2026",q:"Which access modifier allows visibility within the same package only?",code:"",opts:["public","private","protected","default"],ans:3,exp:"'default' (no modifier) restricts to the same package. 'protected' adds subclass access. 'private' = same class only. 'public' = everywhere."},
-{id:57,topic:"Syntax",src:"Internal Jan 2026",q:"What is the output?",code:`class Test{
+}`, opts: ["1 2 3", "2", "1 3", "3"], ans: 2, exp: "'continue' skips the rest of the loop body for that iteration. When i=2, the print is skipped. Only 1 and 3 print."
+      },
+      { id: 56, topic: "OOP", src: "Internal Jan 2026", q: "Which access modifier allows visibility within the same package only?", code: "", opts: ["public", "private", "protected", "default"], ans: 3, exp: "'default' (no modifier) restricts to the same package. 'protected' adds subclass access. 'private' = same class only. 'public' = everywhere." },
+      {
+        id: 57, topic: "Syntax", src: "Internal Jan 2026", q: "What is the output?", code: `class Test{
   static void show(){ System.out.println("Hello"); }
 }
 public class Main{
   public static void main(String[] args){ Test.show(); }
-}`,opts:["Hello","Compile error","Runtime error","Nothing"],ans:0,exp:"Test.show() is a valid static method call. No object needed — called directly on the class name. Prints: Hello."},
-{id:58,topic:"Syntax",src:"Internal Jan 2026",q:"What is the default value of a boolean variable in a Java class?",code:"",opts:["true","false","0","null"],ans:1,exp:"Default values: boolean=false, numeric=0, object=null. Note: local variables have no defaults — they must be explicitly initialized."},
-{id:59,topic:"OOP",src:"Internal Jan 2026",q:"What is the output?",code:`class Message{
+}`, opts: ["Hello", "Compile error", "Runtime error", "Nothing"], ans: 0, exp: "Test.show() is a valid static method call. No object needed — called directly on the class name. Prints: Hello."
+      },
+      { id: 58, topic: "Syntax", src: "Internal Jan 2026", q: "What is the default value of a boolean variable in a Java class?", code: "", opts: ["true", "false", "0", "null"], ans: 1, exp: "Default values: boolean=false, numeric=0, object=null. Note: local variables have no defaults — they must be explicitly initialized." },
+      {
+        id: 59, topic: "OOP", src: "Internal Jan 2026", q: "What is the output?", code: `class Message{
   void show(){ System.out.println("Hello"); }
 }
 class Welcome extends Message{
@@ -416,12 +1122,14 @@ public class Main{
     Message obj = new Welcome();
     obj.show();
   }
-}`,opts:["Hello","Welcome","Compile-time error","Runtime error"],ans:1,exp:"Runtime polymorphism: reference is Message but actual object is Welcome. Java's dynamic dispatch calls Welcome's overridden show() at runtime."},
-{id:60,topic:"OOP",src:"Internal Jan 2026",q:"Which is an example of polymorphism in Java?",code:"",opts:["A class having multiple attributes of different types","Two methods with the same name but different parameters","Declaring a variable inside a loop","Using static variables in a class"],ans:1,exp:"Two methods with the same name but different parameters = method overloading, which is compile-time polymorphism."},
+}`, opts: ["Hello", "Welcome", "Compile-time error", "Runtime error"], ans: 1, exp: "Runtime polymorphism: reference is Message but actual object is Welcome. Java's dynamic dispatch calls Welcome's overridden show() at runtime."
+      },
+      { id: 60, topic: "OOP", src: "Internal Jan 2026", q: "Which is an example of polymorphism in Java?", code: "", opts: ["A class having multiple attributes of different types", "Two methods with the same name but different parameters", "Declaring a variable inside a loop", "Using static variables in a class"], ans: 1, exp: "Two methods with the same name but different parameters = method overloading, which is compile-time polymorphism." },
 
-// ── GENERATED SIMILAR QUESTIONS ──
-{id:61,topic:"OOP",src:"Practice Bank",q:"Which statement correctly defines an abstract class?",code:"",opts:["A class that cannot have any methods","A class that cannot be instantiated and may contain abstract methods","A class that must implement all interface methods","A class used only as a return type"],ans:1,exp:"Abstract classes cannot be instantiated directly. They may have abstract methods (no body) that subclasses must implement."},
-{id:62,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`class Animal{ String sound(){ return "..."; } }
+      // ── GENERATED SIMILAR QUESTIONS ──
+      { id: 61, topic: "OOP", src: "Practice Bank", q: "Which statement correctly defines an abstract class?", code: "", opts: ["A class that cannot have any methods", "A class that cannot be instantiated and may contain abstract methods", "A class that must implement all interface methods", "A class used only as a return type"], ans: 1, exp: "Abstract classes cannot be instantiated directly. They may have abstract methods (no body) that subclasses must implement." },
+      {
+        id: 62, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `class Animal{ String sound(){ return "..."; } }
 class Dog extends Animal{ String sound(){ return "Woof"; } }
 class Cat extends Animal{ String sound(){ return "Meow"; } }
 public class Main{
@@ -430,67 +1138,81 @@ public class Main{
     Animal b = new Cat();
     System.out.println(a.sound() + " " + b.sound());
   }
-}`,opts:["... ...","Woof Meow","Woof ...","... Meow"],ans:1,exp:"Runtime polymorphism: a holds Dog so returns 'Woof'. b holds Cat so returns 'Meow'. Output: Woof Meow."},
-{id:63,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["... ...", "Woof Meow", "Woof ...", "... Meow"], ans: 1, exp: "Runtime polymorphism: a holds Dog so returns 'Woof'. b holds Cat so returns 'Meow'. Output: Woof Meow."
+      },
+      {
+        id: 63, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int x = 5;
     System.out.println(x++);
     System.out.println(x);
   }
-}`,opts:["5 5","5 6","6 6","6 5"],ans:1,exp:"x++ is post-increment: prints CURRENT value (5) first, THEN increments to 6. Second println shows updated 6."},
-{id:64,topic:"OOP",src:"Practice Bank",q:"Which keyword is used in Java to implement an interface?",code:"",opts:["extends","implements","inherits","interface"],ans:1,exp:"'implements' is used when a class wants to fulfil an interface's contract. 'extends' is for class inheritance. A class can implement multiple interfaces."},
-{id:65,topic:"Exceptions",src:"Practice Bank",q:"What happens if a checked exception is not caught or declared with 'throws'?",code:"",opts:["The program runs normally","The JVM automatically handles it","A compilation error occurs","A runtime error occurs"],ans:2,exp:"Checked exceptions MUST either be caught (try-catch) or declared in the method signature (throws). Failure = compilation error."},
-{id:66,topic:"UML",src:"Practice Bank",q:"In UML, what does a dashed arrow with an open arrowhead represent?",code:"",opts:["Composition","Aggregation","Realisation (class implementing interface)","Simple association"],ans:2,exp:"Dashed arrow + open arrowhead = Realisation (a class implementing an interface). Solid arrow = generalisation (inheritance)."},
-{id:67,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["5 5", "5 6", "6 6", "6 5"], ans: 1, exp: "x++ is post-increment: prints CURRENT value (5) first, THEN increments to 6. Second println shows updated 6."
+      },
+      { id: 64, topic: "OOP", src: "Practice Bank", q: "Which keyword is used in Java to implement an interface?", code: "", opts: ["extends", "implements", "inherits", "interface"], ans: 1, exp: "'implements' is used when a class wants to fulfil an interface's contract. 'extends' is for class inheritance. A class can implement multiple interfaces." },
+      { id: 65, topic: "Exceptions", src: "Practice Bank", q: "What happens if a checked exception is not caught or declared with 'throws'?", code: "", opts: ["The program runs normally", "The JVM automatically handles it", "A compilation error occurs", "A runtime error occurs"], ans: 2, exp: "Checked exceptions MUST either be caught (try-catch) or declared in the method signature (throws). Failure = compilation error." },
+      { id: 66, topic: "UML", src: "Practice Bank", q: "In UML, what does a dashed arrow with an open arrowhead represent?", code: "", opts: ["Composition", "Aggregation", "Realisation (class implementing interface)", "Simple association"], ans: 2, exp: "Dashed arrow + open arrowhead = Realisation (a class implementing an interface). Solid arrow = generalisation (inheritance)." },
+      {
+        id: 67, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   static int count = 0;
   public Main(){ count++; }
   public static void main(String[] args){
     new Main(); new Main(); new Main();
     System.out.println(count);
   }
-}`,opts:["0","1","2","3"],ans:3,exp:"'count' is static — shared across all instances. Each 'new Main()' increments it. Three objects → count = 3."},
-{id:68,topic:"File I/O",src:"Practice Bank",q:"Which class is MOST efficient for reading large text files line by line?",code:"",opts:["FileReader","Scanner","BufferedReader","DataInputStream"],ans:2,exp:"BufferedReader buffers input, reducing I/O operations. readLine() returns null at EOF. Most efficient for large file reading."},
-{id:69,topic:"GUI",src:"Practice Bank",q:"Which layout manager arranges components in 5 regions (North, South, East, West, Center)?",code:"",opts:["FlowLayout","GridLayout","BorderLayout","CardLayout"],ans:2,exp:"BorderLayout divides containers into 5 regions. FlowLayout = left-to-right. GridLayout = equal-sized cells. CardLayout = stacked panels."},
-{id:70,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`interface Flyable{ default void fly(){ System.out.println("Flying"); } }
+}`, opts: ["0", "1", "2", "3"], ans: 3, exp: "'count' is static — shared across all instances. Each 'new Main()' increments it. Three objects → count = 3."
+      },
+      { id: 68, topic: "File I/O", src: "Practice Bank", q: "Which class is MOST efficient for reading large text files line by line?", code: "", opts: ["FileReader", "Scanner", "BufferedReader", "DataInputStream"], ans: 2, exp: "BufferedReader buffers input, reducing I/O operations. readLine() returns null at EOF. Most efficient for large file reading." },
+      { id: 69, topic: "GUI", src: "Practice Bank", q: "Which layout manager arranges components in 5 regions (North, South, East, West, Center)?", code: "", opts: ["FlowLayout", "GridLayout", "BorderLayout", "CardLayout"], ans: 2, exp: "BorderLayout divides containers into 5 regions. FlowLayout = left-to-right. GridLayout = equal-sized cells. CardLayout = stacked panels." },
+      {
+        id: 70, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `interface Flyable{ default void fly(){ System.out.println("Flying"); } }
 class Bird implements Flyable{}
 public class Main{
   public static void main(String[] args){
     new Bird().fly();
   }
-}`,opts:["Compilation error","Flying","Nothing","Runtime error"],ans:1,exp:"Interface default methods have a body and are inherited. Bird inherits fly() without overriding. Output: Flying."},
-{id:71,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["Compilation error", "Flying", "Nothing", "Runtime error"], ans: 1, exp: "Interface default methods have a body and are inherited. Bird inherits fly() without overriding. Output: Flying."
+      },
+      {
+        id: 71, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     String s1 = "Hello";
     String s2 = "Hello";
     System.out.println(s1 == s2);
     System.out.println(s1.equals(s2));
   }
-}`,opts:["false false","true true","false true","true false"],ans:1,exp:"String literals share the same pool object, so == is true. equals() checks content (also true). Both print true."},
-{id:72,topic:"OOP",src:"Practice Bank",q:"Which is TRUE about the 'super' keyword?",code:"",opts:["It refers to the current class object","It calls the child class constructor","It can call the parent class constructor or methods","It replaces 'this' in subclasses"],ans:2,exp:"'super' accesses the parent class. super() calls the parent constructor; super.method() calls a parent method. 'this' = current object."},
-{id:73,topic:"Exceptions",src:"Practice Bank",q:"What is the ROOT class of all exceptions in Java?",code:"",opts:["Error","RuntimeException","Exception","Throwable"],ans:3,exp:"Throwable is the root. It has two subclasses: Exception (recoverable) and Error (serious JVM issues like OutOfMemoryError)."},
-{id:74,topic:"UML",src:"Practice Bank",q:"In a Use Case Diagram, what does <<include>> mean?",code:"",opts:["One use case optionally extends another","One use case ALWAYS calls another","Two actors share a use case","A use case is generalised"],ans:1,exp:"<<include>> = mandatory inclusion. The base use case ALWAYS calls the included one. <<extend>> = optional extension."},
-{id:75,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["false false", "true true", "false true", "true false"], ans: 1, exp: "String literals share the same pool object, so == is true. equals() checks content (also true). Both print true."
+      },
+      { id: 72, topic: "OOP", src: "Practice Bank", q: "Which is TRUE about the 'super' keyword?", code: "", opts: ["It refers to the current class object", "It calls the child class constructor", "It can call the parent class constructor or methods", "It replaces 'this' in subclasses"], ans: 2, exp: "'super' accesses the parent class. super() calls the parent constructor; super.method() calls a parent method. 'this' = current object." },
+      { id: 73, topic: "Exceptions", src: "Practice Bank", q: "What is the ROOT class of all exceptions in Java?", code: "", opts: ["Error", "RuntimeException", "Exception", "Throwable"], ans: 3, exp: "Throwable is the root. It has two subclasses: Exception (recoverable) and Error (serious JVM issues like OutOfMemoryError)." },
+      { id: 74, topic: "UML", src: "Practice Bank", q: "In a Use Case Diagram, what does <<include>> mean?", code: "", opts: ["One use case optionally extends another", "One use case ALWAYS calls another", "Two actors share a use case", "A use case is generalised"], ans: 1, exp: "<<include>> = mandatory inclusion. The base use case ALWAYS calls the included one. <<extend>> = optional extension." },
+      {
+        id: 75, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int[] arr = {5,3,8,1};
     int max = arr[0];
     for(int n : arr){ if(n > max) max = n; }
     System.out.println(max);
   }
-}`,opts:["5","3","8","1"],ans:2,exp:"Enhanced for loop compares each element: 5>5? No. 3>5? No. 8>5? Yes → max=8. 1>8? No. Final max = 8."},
-{id:76,topic:"OOP",src:"Practice Bank",q:"Which statement about interfaces in Java is CORRECT?",code:"",opts:["An interface can have instance variables","A class can implement only one interface","An interface can extend multiple interfaces","An interface can be instantiated directly"],ans:2,exp:"Interfaces CAN extend multiple interfaces. They only have constants (not instance vars). A class can implement MULTIPLE interfaces. Cannot be instantiated."},
-{id:77,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["5", "3", "8", "1"], ans: 2, exp: "Enhanced for loop compares each element: 5>5? No. 3>5? No. 8>5? Yes → max=8. 1>8? No. Final max = 8."
+      },
+      { id: 76, topic: "OOP", src: "Practice Bank", q: "Which statement about interfaces in Java is CORRECT?", code: "", opts: ["An interface can have instance variables", "A class can implement only one interface", "An interface can extend multiple interfaces", "An interface can be instantiated directly"], ans: 2, exp: "Interfaces CAN extend multiple interfaces. They only have constants (not instance vars). A class can implement MULTIPLE interfaces. Cannot be instantiated." },
+      {
+        id: 77, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     for(int i=0; i<5; i++){
       if(i==3) break;
       System.out.print(i + " ");
     }
   }
-}`,opts:["0 1 2 3 4","0 1 2 3","0 1 2","0 1 2 4"],ans:2,exp:"'break' exits the loop when i==3. Before that: 0, 1, 2 are printed. When i=3, break fires before print. Output: 0 1 2."},
-{id:78,topic:"OOP",src:"Practice Bank",q:"What is the purpose of the toString() method?",code:"",opts:["To convert a number to String","To return a String representation of an object","To compare two objects","To copy an object"],ans:1,exp:"toString() returns a human-readable String representation of an object. Auto-called when object is used in a String context (e.g. println)."},
-{id:79,topic:"Exceptions",src:"Practice Bank",q:"Which of the following is a CHECKED exception?",code:"",opts:["NullPointerException","ArrayIndexOutOfBoundsException","IOException","ClassCastException"],ans:2,exp:"IOException is checked — must be caught or declared. NullPointerException, ArrayIndexOutOfBounds, ClassCastException are unchecked (RuntimeExceptions)."},
-{id:80,topic:"File I/O",src:"Practice Bank",q:"What is the correct way to release file resources and prevent memory leaks?",code:"",opts:["Using delete()","Using close()","Using flush() only","Using reset()"],ans:1,exp:"close() releases system resources (file handles). Modern Java uses try-with-resources which automatically calls close() when the block exits."},
-{id:81,topic:"GUI",src:"Practice Bank",q:"Which method adds a component to a JPanel?",code:"",opts:["insert()","addComponent()","add()","place()"],ans:2,exp:"add() is the standard Container method to add components (JButton, JLabel, etc.) to a container like JPanel or JFrame."},
-{id:82,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`class Shape{ int area(){ return 0; } }
+}`, opts: ["0 1 2 3 4", "0 1 2 3", "0 1 2", "0 1 2 4"], ans: 2, exp: "'break' exits the loop when i==3. Before that: 0, 1, 2 are printed. When i=3, break fires before print. Output: 0 1 2."
+      },
+      { id: 78, topic: "OOP", src: "Practice Bank", q: "What is the purpose of the toString() method?", code: "", opts: ["To convert a number to String", "To return a String representation of an object", "To compare two objects", "To copy an object"], ans: 1, exp: "toString() returns a human-readable String representation of an object. Auto-called when object is used in a String context (e.g. println)." },
+      { id: 79, topic: "Exceptions", src: "Practice Bank", q: "Which of the following is a CHECKED exception?", code: "", opts: ["NullPointerException", "ArrayIndexOutOfBoundsException", "IOException", "ClassCastException"], ans: 2, exp: "IOException is checked — must be caught or declared. NullPointerException, ArrayIndexOutOfBounds, ClassCastException are unchecked (RuntimeExceptions)." },
+      { id: 80, topic: "File I/O", src: "Practice Bank", q: "What is the correct way to release file resources and prevent memory leaks?", code: "", opts: ["Using delete()", "Using close()", "Using flush() only", "Using reset()"], ans: 1, exp: "close() releases system resources (file handles). Modern Java uses try-with-resources which automatically calls close() when the block exits." },
+      { id: 81, topic: "GUI", src: "Practice Bank", q: "Which method adds a component to a JPanel?", code: "", opts: ["insert()", "addComponent()", "add()", "place()"], ans: 2, exp: "add() is the standard Container method to add components (JButton, JLabel, etc.) to a container like JPanel or JFrame." },
+      {
+        id: 82, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `class Shape{ int area(){ return 0; } }
 class Rectangle extends Shape{
   int w, h;
   Rectangle(int w, int h){ this.w=w; this.h=h; }
@@ -501,11 +1223,13 @@ public class Main{
     Shape s = new Rectangle(4,5);
     System.out.println(s.area());
   }
-}`,opts:["0","4","5","20"],ans:3,exp:"Runtime polymorphism: s is Shape reference but holds Rectangle. area() is overridden, so Rectangle's area() runs: 4*5=20."},
-{id:83,topic:"Syntax",src:"Practice Bank",q:"What is the default value of an int array element in Java?",code:"",opts:["null","undefined","0","1"],ans:2,exp:"int array elements default to 0. Object arrays default to null. boolean defaults to false. Local variable arrays must be explicitly initialized."},
-{id:84,topic:"UML",src:"Practice Bank",q:"What does multiplicity '1..*' mean in a UML class diagram?",code:"",opts:["Exactly one","Zero or more","One or more","Zero or one"],ans:2,exp:"1..* = one or more. 0..* = zero or more. 0..1 = zero or one. 1 = exactly one. These multiplicities appear on association ends."},
-{id:85,topic:"OOP",src:"Practice Bank",q:"Which is TRUE about method overriding?",code:"",opts:["Overriding method must have a different return type","Overriding method must have more parameters","Overriding method must have the same signature as parent","Overriding method must be static"],ans:2,exp:"Method overriding requires the SAME name, return type (or covariant), and parameters. Access modifier can be same or wider. Must NOT be static."},
-{id:86,topic:"Exceptions",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["0", "4", "5", "20"], ans: 3, exp: "Runtime polymorphism: s is Shape reference but holds Rectangle. area() is overridden, so Rectangle's area() runs: 4*5=20."
+      },
+      { id: 83, topic: "Syntax", src: "Practice Bank", q: "What is the default value of an int array element in Java?", code: "", opts: ["null", "undefined", "0", "1"], ans: 2, exp: "int array elements default to 0. Object arrays default to null. boolean defaults to false. Local variable arrays must be explicitly initialized." },
+      { id: 84, topic: "UML", src: "Practice Bank", q: "What does multiplicity '1..*' mean in a UML class diagram?", code: "", opts: ["Exactly one", "Zero or more", "One or more", "Zero or one"], ans: 2, exp: "1..* = one or more. 0..* = zero or more. 0..1 = zero or one. 1 = exactly one. These multiplicities appear on association ends." },
+      { id: 85, topic: "OOP", src: "Practice Bank", q: "Which is TRUE about method overriding?", code: "", opts: ["Overriding method must have a different return type", "Overriding method must have more parameters", "Overriding method must have the same signature as parent", "Overriding method must be static"], ans: 2, exp: "Method overriding requires the SAME name, return type (or covariant), and parameters. Access modifier can be same or wider. Must NOT be static." },
+      {
+        id: 86, topic: "Exceptions", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   static int divide(int a, int b){ return a/b; }
   public static void main(String[] args){
     try{
@@ -516,17 +1240,21 @@ public class Main{
       System.out.println("Done");
     }
   }
-}`,opts:["10","Cannot divide by zero","Cannot divide by zero Done","Done"],ans:2,exp:"10/0 throws ArithmeticException. Catch handles it → prints 'Cannot divide by zero'. Finally always runs → prints 'Done'."},
-{id:87,topic:"OOP",src:"Practice Bank",q:"What does 'static' mean when applied to a method?",code:"",opts:["The method can only be called once","The method belongs to the class, not an instance","The method cannot be overridden","The method must return void"],ans:1,exp:"Static methods belong to the CLASS, not objects. Called via ClassName.method() without creating an object instance."},
-{id:88,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["10", "Cannot divide by zero", "Cannot divide by zero Done", "Done"], ans: 2, exp: "10/0 throws ArithmeticException. Catch handles it → prints 'Cannot divide by zero'. Finally always runs → prints 'Done'."
+      },
+      { id: 87, topic: "OOP", src: "Practice Bank", q: "What does 'static' mean when applied to a method?", code: "", opts: ["The method can only be called once", "The method belongs to the class, not an instance", "The method cannot be overridden", "The method must return void"], ans: 1, exp: "Static methods belong to the CLASS, not objects. Called via ClassName.method() without creating an object instance." },
+      {
+        id: 88, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int a=10, b=3;
     System.out.println(a/b);
     System.out.println(a%b);
   }
-}`,opts:["3.33 1","3 1","3 0","10 3"],ans:1,exp:"Integer division: 10/3 = 3 (decimal truncated). Modulo: 10%3 = 1 (remainder). Output: 3 on line 1, 1 on line 2."},
-{id:89,topic:"GUI",src:"Practice Bank",q:"What does ActionListener's actionPerformed() method do?",code:"",opts:["Displays a dialog box","Responds to user actions like button clicks","Closes the window","Redraws the GUI components"],ans:1,exp:"actionPerformed() is invoked when a registered action event occurs — most commonly a button click. Core of Java Swing event handling."},
-{id:90,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`class Counter{
+}`, opts: ["3.33 1", "3 1", "3 0", "10 3"], ans: 1, exp: "Integer division: 10/3 = 3 (decimal truncated). Modulo: 10%3 = 1 (remainder). Output: 3 on line 1, 1 on line 2."
+      },
+      { id: 89, topic: "GUI", src: "Practice Bank", q: "What does ActionListener's actionPerformed() method do?", code: "", opts: ["Displays a dialog box", "Responds to user actions like button clicks", "Closes the window", "Redraws the GUI components"], ans: 1, exp: "actionPerformed() is invoked when a registered action event occurs — most commonly a button click. Core of Java Swing event handling." },
+      {
+        id: 90, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `class Counter{
   private int count = 0;
   public void increment(){ count++; }
   public int getCount(){ return count; }
@@ -537,21 +1265,25 @@ public class Main{
     c.increment(); c.increment(); c.increment();
     System.out.println(c.getCount());
   }
-}`,opts:["0","1","2","3"],ans:3,exp:"increment() is called 3 times, adding 1 each time to the private count field. getCount() returns 3."},
-{id:91,topic:"UML",src:"Practice Bank",q:"In UML class diagrams, which symbol represents a PRIVATE attribute?",code:"",opts:["+ name: String","# name: String","- name: String","~ name: String"],ans:2,exp:"UML visibility: + = public, - = private, # = protected, ~ = package/default. Minus (-) before attribute name = private."},
-{id:92,topic:"Exceptions",src:"Practice Bank",q:"What is the difference between 'throw' and 'throws'?",code:"",opts:["No difference","'throw' declares, 'throws' actually throws","'throw' throws an exception; 'throws' declares the method may throw one","'throws' is for checked only; 'throw' is for unchecked only"],ans:2,exp:"'throw' (inside method body) actually throws an exception object. 'throws' (in method signature) declares the exception may be thrown."},
-{id:93,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["0", "1", "2", "3"], ans: 3, exp: "increment() is called 3 times, adding 1 each time to the private count field. getCount() returns 3."
+      },
+      { id: 91, topic: "UML", src: "Practice Bank", q: "In UML class diagrams, which symbol represents a PRIVATE attribute?", code: "", opts: ["+ name: String", "# name: String", "- name: String", "~ name: String"], ans: 2, exp: "UML visibility: + = public, - = private, # = protected, ~ = package/default. Minus (-) before attribute name = private." },
+      { id: 92, topic: "Exceptions", src: "Practice Bank", q: "What is the difference between 'throw' and 'throws'?", code: "", opts: ["No difference", "'throw' declares, 'throws' actually throws", "'throw' throws an exception; 'throws' declares the method may throw one", "'throws' is for checked only; 'throw' is for unchecked only"], ans: 2, exp: "'throw' (inside method body) actually throws an exception object. 'throws' (in method signature) declares the exception may be thrown." },
+      {
+        id: 93, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     String s = "Hello World";
     System.out.println(s.length());
     System.out.println(s.toUpperCase());
     System.out.println(s.substring(6));
   }
-}`,opts:["11 HELLO WORLD World","10 HELLO WORLD World","11 Hello World world","11 HELLO WORLD world"],ans:0,exp:"'Hello World' = 11 chars (space included). toUpperCase = 'HELLO WORLD'. substring(6) starts at index 6 = 'World'."},
-{id:94,topic:"OOP",src:"Practice Bank",q:"Which BEST describes encapsulation?",code:"",opts:["A class extending another class","Private variables with public getters and setters","A method calling itself","Using multiple classes for one object"],ans:1,exp:"Encapsulation = hiding internal state (private fields) and exposing controlled access through public getter/setter methods."},
-{id:95,topic:"File I/O",src:"Practice Bank",q:"What happens when FileWriter is given a path to a file that does not exist?",code:"",opts:["An exception is thrown immediately","The file is created automatically","You must create the file first","null is returned"],ans:1,exp:"If the file doesn't exist, FileWriter creates it automatically. If parent directories don't exist, use File.mkdirs() first."},
-{id:96,topic:"GUI",src:"Practice Bank",q:"Which Swing component creates a single-line text input field?",code:"",opts:["JTextArea","JTextField","JLabel","JPasswordField"],ans:1,exp:"JTextField = single-line text input. JTextArea = multi-line. JLabel = display-only (not editable). JPasswordField = masked single-line input."},
-{id:97,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`abstract class Vehicle{
+}`, opts: ["11 HELLO WORLD World", "10 HELLO WORLD World", "11 Hello World world", "11 HELLO WORLD world"], ans: 0, exp: "'Hello World' = 11 chars (space included). toUpperCase = 'HELLO WORLD'. substring(6) starts at index 6 = 'World'."
+      },
+      { id: 94, topic: "OOP", src: "Practice Bank", q: "Which BEST describes encapsulation?", code: "", opts: ["A class extending another class", "Private variables with public getters and setters", "A method calling itself", "Using multiple classes for one object"], ans: 1, exp: "Encapsulation = hiding internal state (private fields) and exposing controlled access through public getter/setter methods." },
+      { id: 95, topic: "File I/O", src: "Practice Bank", q: "What happens when FileWriter is given a path to a file that does not exist?", code: "", opts: ["An exception is thrown immediately", "The file is created automatically", "You must create the file first", "null is returned"], ans: 1, exp: "If the file doesn't exist, FileWriter creates it automatically. If parent directories don't exist, use File.mkdirs() first." },
+      { id: 96, topic: "GUI", src: "Practice Bank", q: "Which Swing component creates a single-line text input field?", code: "", opts: ["JTextArea", "JTextField", "JLabel", "JPasswordField"], ans: 1, exp: "JTextField = single-line text input. JTextArea = multi-line. JLabel = display-only (not editable). JPasswordField = masked single-line input." },
+      {
+        id: 97, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `abstract class Vehicle{
   abstract String getType();
   void display(){ System.out.println("Type: " + getType()); }
 }
@@ -563,8 +1295,10 @@ public class Main{
     Vehicle v = new Car();
     v.display();
   }
-}`,opts:["Type: ","Type: Car","Compilation error","Type: Vehicle"],ans:1,exp:"display() calls abstract getType(). Since v is actually a Car, Car's getType() returns 'Car'. Output: Type: Car — runtime polymorphism."},
-{id:98,topic:"Syntax",src:"Practice Bank",q:"What is the output?",code:`public class Main{
+}`, opts: ["Type: ", "Type: Car", "Compilation error", "Type: Vehicle"], ans: 1, exp: "display() calls abstract getType(). Since v is actually a Car, Car's getType() returns 'Car'. Output: Type: Car — runtime polymorphism."
+      },
+      {
+        id: 98, topic: "Syntax", src: "Practice Bank", q: "What is the output?", code: `public class Main{
   public static void main(String[] args){
     int i = 0;
     while(i < 3){
@@ -573,129 +1307,128 @@ public class Main{
       System.out.print(i + " ");
     }
   }
-}`,opts:["1 2 3","1 3","2","1 2"],ans:1,exp:"i increments first. i=1: print 1. i=2: continue skips print. i=3: print 3. Output: 1 3."},
-{id:99,topic:"OOP",src:"Practice Bank",q:"Which concept lets a child class provide its own implementation of a parent method?",code:"",opts:["Method overloading","Method hiding","Method overriding","Method declaration"],ans:2,exp:"Method overriding lets a subclass redefine a method from the parent class with the same name, return type, and parameters."},
-{id:100,topic:"OOP",src:"Practice Bank",q:"What is the output?",code:`class A{ A(){ System.out.print("A "); } }
+}`, opts: ["1 2 3", "1 3", "2", "1 2"], ans: 1, exp: "i increments first. i=1: print 1. i=2: continue skips print. i=3: print 3. Output: 1 3."
+      },
+      { id: 99, topic: "OOP", src: "Practice Bank", q: "Which concept lets a child class provide its own implementation of a parent method?", code: "", opts: ["Method overloading", "Method hiding", "Method overriding", "Method declaration"], ans: 2, exp: "Method overriding lets a subclass redefine a method from the parent class with the same name, return type, and parameters." },
+      {
+        id: 100, topic: "OOP", src: "Practice Bank", q: "What is the output?", code: `class A{ A(){ System.out.print("A "); } }
 class B extends A{ B(){ System.out.print("B "); } }
 class C extends B{ C(){ System.out.print("C "); } }
 public class Main{
   public static void main(String[] args){ new C(); }
-}`,opts:["C","C B","A B C","C B A"],ans:2,exp:"Constructor chaining: new C() → super() to B → super() to A. Prints A, then B, then C. Output: A B C."}
-];
+}`, opts: ["C", "C B", "A B C", "C B A"], ans: 2, exp: "Constructor chaining: new C() → super() to B → super() to A. Prints A, then B, then C. Output: A B C."
+      }
+    ];
 
-// ════════════════════════════════════════════
-//  STATE
-// ════════════════════════════════════════════
-let active=[], cur=0, score=0, answered=false, topicSc={}, lastSet=[];
-let selMode_='bank';
+    // ════════════════════════════════════════════
+    //  STATE
+    // ════════════════════════════════════════════
+    let active = [], cur = 0, score = 0, answered = false, topicSc = {}, lastSet = [];
+    let selMode_ = 'bank';
 
-function selMode(m,el){
-  selMode_=m;
-  document.querySelectorAll('.mc').forEach(c=>c.classList.remove('active'));
-  el.classList.add('active');
-}
+    function selMode(m, el) {
+      selMode_ = m;
+      document.querySelectorAll('.mc').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+    }
 
-function showLanding(){show('landing')}
-function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden')}
+    function showLanding() { show('landing') }
+    function show(id) { document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden')); document.getElementById(id).classList.remove('hidden') }
 
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+    function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a }
+    function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') }
 
-function startBank(){
-  const n=parseInt(document.getElementById('qCount').value);
-  const t=document.getElementById('topicSel').value;
-  let pool=t==='all'?[...BANK]:BANK.filter(q=>q.topic===t);
-  pool=shuffle(pool);
-  active=pool.slice(0,Math.min(n,pool.length));
-  lastSet=[...active];
-  begin();
-}
+    function startBank() {
+      const n = parseInt(document.getElementById('qCount').value);
+      const t = document.getElementById('topicSel').value;
+      let pool = t === 'all' ? [...BANK] : BANK.filter(q => q.topic === t);
+      pool = shuffle(pool);
+      active = pool.slice(0, Math.min(n, pool.length));
+      lastSet = [...active];
+      begin();
+    }
 
-function retrySame(){active=[...lastSet];begin()}
-function begin(){
-  cur=0;score=0;answered=false;topicSc={};
-  active.forEach(q=>{if(!topicSc[q.topic])topicSc[q.topic]={c:0,t:0};topicSc[q.topic].t++;});
-  show('quiz');
-  renderQ();
-}
+    function retrySame() { active = [...lastSet]; begin() }
+    function begin() {
+      cur = 0; score = 0; answered = false; topicSc = {};
+      active.forEach(q => { if (!topicSc[q.topic]) topicSc[q.topic] = { c: 0, t: 0 }; topicSc[q.topic].t++; });
+      show('quiz');
+      renderQ();
+    }
 
-function renderQ(){
-  const q=active[cur],tot=active.length;
-  document.getElementById('qCur').textContent=cur+1;
-  document.getElementById('qTot').textContent=tot;
-  document.getElementById('scDisp').textContent=score;
-  document.getElementById('pFill').style.width=`${(cur/tot)*100}%`;
-  document.getElementById('qTopic').textContent=q.topic;
-  document.getElementById('qSrc').textContent=q.src;
-  document.getElementById('qText').textContent=q.q;
-  const cw=document.getElementById('qCode');
-  cw.innerHTML=q.code&&q.code.trim()?`<div class="code">${esc(q.code)}</div>`:'';
-  const opEl=document.getElementById('opts');
-  opEl.innerHTML='';
-  ['A','B','C','D'].forEach((L,i)=>{
-    const b=document.createElement('button');
-    b.className='opt';
-    b.innerHTML=`<span class="ol">${L}</span><span>${esc(q.opts[i])}</span>`;
-    b.onclick=()=>pick(i);
-    opEl.appendChild(b);
-  });
-  document.getElementById('expBox').classList.add('hidden');
-  document.getElementById('expBox').innerHTML='';
-  document.getElementById('btnNext').disabled=true;
-  document.getElementById('btnNext').textContent=cur<active.length-1?'Next →':'See Results ✦';
-  answered=false;
-  const card=document.getElementById('qcard');
-  card.style.animation='none';void card.offsetWidth;card.style.animation='slideC .28s ease both';
-}
+    function renderQ() {
+      const q = active[cur], tot = active.length;
+      document.getElementById('qCur').textContent = cur + 1;
+      document.getElementById('qTot').textContent = tot;
+      document.getElementById('scDisp').textContent = score;
+      document.getElementById('pFill').style.width = `${(cur / tot) * 100}%`;
+      document.getElementById('qTopic').textContent = q.topic;
+      document.getElementById('qSrc').textContent = q.src;
+      document.getElementById('qText').textContent = q.q;
+      const cw = document.getElementById('qCode');
+      cw.innerHTML = q.code && q.code.trim() ? `<div class="code">${esc(q.code)}</div>` : '';
+      const opEl = document.getElementById('opts');
+      opEl.innerHTML = '';
+      ['A', 'B', 'C', 'D'].forEach((L, i) => {
+        const b = document.createElement('button');
+        b.className = 'opt';
+        b.innerHTML = `<span class="ol">${L}</span><span>${esc(q.opts[i])}</span>`;
+        b.onclick = () => pick(i);
+        opEl.appendChild(b);
+      });
+      document.getElementById('expBox').classList.add('hidden');
+      document.getElementById('expBox').innerHTML = '';
+      document.getElementById('btnNext').disabled = true;
+      document.getElementById('btnNext').textContent = cur < active.length - 1 ? 'Next →' : 'See Results ✦';
+      answered = false;
+      const card = document.getElementById('qcard');
+      card.style.animation = 'none'; void card.offsetWidth; card.style.animation = 'slideC .28s ease both';
+    }
 
-function pick(idx){
-  if(answered)return;
-  answered=true;
-  const q=active[cur];
-  document.querySelectorAll('.opt').forEach((b,i)=>{
-    b.disabled=true;
-    if(i===q.ans)b.classList.add('correct');
-    else if(i===idx)b.classList.add('wrong');
-  });
-  if(idx===q.ans){score++;topicSc[q.topic].c++;}
-  document.getElementById('scDisp').textContent=score;
-  const eb=document.getElementById('expBox');
-  eb.innerHTML=`<div class="et">${idx===q.ans?'✓ Correct!':'✗ Incorrect.'}</div>${esc(q.exp)}`;
-  eb.classList.remove('hidden');
-  document.getElementById('btnNext').disabled=false;
-}
+    function pick(idx) {
+      if (answered) return;
+      answered = true;
+      const q = active[cur];
+      document.querySelectorAll('.opt').forEach((b, i) => {
+        b.disabled = true;
+        if (i === q.ans) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      if (idx === q.ans) { score++; topicSc[q.topic].c++; }
+      document.getElementById('scDisp').textContent = score;
+      const eb = document.getElementById('expBox');
+      eb.innerHTML = `<div class="et">${idx === q.ans ? '✓ Correct!' : '✗ Incorrect.'}</div>${esc(q.exp)}`;
+      eb.classList.remove('hidden');
+      document.getElementById('btnNext').disabled = false;
+    }
 
-function doNext(){cur++;if(cur>=active.length)showResults();else renderQ();}
+    function doNext() { cur++; if (cur >= active.length) showResults(); else renderQ(); }
 
-function showResults(){
-  const tot=active.length,pct=Math.round((score/tot)*100);
-  document.getElementById('resRing').style.setProperty('--pct',pct);
-  document.getElementById('resBig').textContent=`${score}/${tot}`;
-  document.getElementById('stC').textContent=score;
-  document.getElementById('stW').textContent=tot-score;
-  document.getElementById('stA').textContent=pct+'%';
-  let grade,msg;
-  if(pct>=85){grade='🏆 Outstanding';msg='Exceptional! You have mastered OODJ. You are exam ready!';}
-  else if(pct>=75){grade='⭐ Very Good';msg='Great work! A couple more rounds and you will ace it.';}
-  else if(pct>=65){grade='👍 Good';msg='Solid understanding. Review the topics you missed.';}
-  else if(pct>=55){grade='📚 Average';msg='Getting there. Focus on your weak topic areas.';}
-  else if(pct>=40){grade='⚡ Fair';msg='Keep practicing! Review fundamentals.';}
-  else{grade='💪 Needs Work';msg="Don't give up — review the basics and retry!";}
-  document.getElementById('resGrade').textContent=grade;
-  document.getElementById('resMsg').textContent=msg;
-  const bd=document.getElementById('bkdn');
-  const rows=Object.entries(topicSc).map(([t,v])=>{
-    const p=v.t>0?Math.round((v.c/v.t)*100):0;
-    return `<div class="bk-row"><div class="bk-l">${t}</div><div class="bk-b"><div class="bk-f" style="width:${p}%"></div></div><div class="bk-p">${v.c}/${v.t}</div></div>`;
-  }).join('');
-  bd.innerHTML=`<div class="bk-h">PERFORMANCE BY TOPIC</div>${rows}`;
-  show('results');
-}
-</script>
+    function showResults() {
+      const tot = active.length, pct = Math.round((score / tot) * 100);
+      document.getElementById('resRing').style.setProperty('--pct', pct);
+      document.getElementById('resBig').textContent = `${score}/${tot}`;
+      document.getElementById('stC').textContent = score;
+      document.getElementById('stW').textContent = tot - score;
+      document.getElementById('stA').textContent = pct + '%';
+      let grade, msg;
+      if (pct >= 85) { grade = '🏆 Outstanding'; msg = 'Exceptional! You have mastered OODJ. You are exam ready!'; }
+      else if (pct >= 75) { grade = '⭐ Very Good'; msg = 'Great work! A couple more rounds and you will ace it.'; }
+      else if (pct >= 65) { grade = '👍 Good'; msg = 'Solid understanding. Review the topics you missed.'; }
+      else if (pct >= 55) { grade = '📚 Average'; msg = 'Getting there. Focus on your weak topic areas.'; }
+      else if (pct >= 40) { grade = '⚡ Fair'; msg = 'Keep practicing! Review fundamentals.'; }
+      else { grade = '💪 Needs Work'; msg = "Don't give up — review the basics and retry!"; }
+      document.getElementById('resGrade').textContent = grade;
+      document.getElementById('resMsg').textContent = msg;
+      const bd = document.getElementById('bkdn');
+      const rows = Object.entries(topicSc).map(([t, v]) => {
+        const p = v.t > 0 ? Math.round((v.c / v.t) * 100) : 0;
+        return `<div class="bk-row"><div class="bk-l">${t}</div><div class="bk-b"><div class="bk-f" style="width:${p}%"></div></div><div class="bk-p">${v.c}/${v.t}</div></div>`;
+      }).join('');
+      bd.innerHTML = `<div class="bk-h">PERFORMANCE BY TOPIC</div>${rows}`;
+      show('results');
+    }
+  </script>
 </body>
+
 </html>
-
-
-
-
-
